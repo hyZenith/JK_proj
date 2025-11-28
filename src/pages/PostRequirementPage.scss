@@ -1,101 +1,149 @@
 .post-requirement {
+
+
+    &__subtitle{
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin:10px 0 20px 0;
+    }
+
+    &__intro {
+        padding-bottom: 4rem;
+    }
     &__container {
         max-width: 820px;
         background: white;
         padding: 0;
     }
 
-    &__title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: #1a1a1a;
-    }
-
-    &__subtitle {
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 40px;
-    }
-
+    /* Global form grid */
     &__form {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 25px;
     }
 
-    &__form-group {
+    /* Each row: LABEL LEFT | INPUT RIGHT */
+    &__form-row {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        align-items: start;
+        gap: 25px;
+    }
+
+    /* LABEL styling */
+    &__label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #333;
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
 
-        &--full {
-            grid-column: 1 / -1;
-        }
+    &__required {
+        color: red;
+        font-weight: bold;
+    }
 
-        label {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 0.95rem;
-        }
+    /* INPUTS */
+    &__input,
+    &__select,
+    &__textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.3s ease;
 
-        input,
-        select,
-        textarea {
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-family: inherit;
-
-            &:focus {
-                outline: none;
-                border-color: #667eea;
-                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-            }
-
-            &::placeholder {
-                color: #aaa;
-            }
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
+        &:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
     }
 
+    /* TEXTAREA */
+    &__textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    /* FULL NAME — right side has two equal inputs */
+    &__form-row--full-name .post-requirement__form-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* Telephone split: small + large */
+    &__form-row--split {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 25px;
+
+        .post-requirement__form-col {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+        }
+    }
+
+    /* Country dropdown flag */
+    &__select-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__flag {
+        font-size: 1.4rem;
+    }
+
+    /* Submit button */
     &__submit {
         grid-column: 1 / -1;
         padding: 16px 32px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #0057ff;
         color: white;
         border: none;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: 600;
+        border-radius: 25px;
+        font-size: 0.9rem;
         cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 10px;
+        transition: 0.3s;
+        width:575px;
 
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
-
-        &:active {
-            transform: translateY(0);
-        }
+    }
+    &__form-actions {
+        display: flex;
+        justify-content: flex-end;
     }
 
+    /* MOBILE VIEW */
     @media (max-width: 768px) {
-        &__title {
-            font-size: 2rem;
+        &__form-row,
+        &__form-row--full-name,
+        &__form-row--split {
+            grid-template-columns: 1fr !important;
         }
 
-        &__form {
-            grid-template-columns: 1fr;
+        &__form-row--full-name .post-requirement__form-col {
+            grid-template-columns: 1fr !important;
+        }
+
+        &__form-row--split .post-requirement__form-col {
+            grid-template-columns: 1fr !important;
         }
     }
+
+    // .post-requirement__form-actions {
+    //     display: flex;
+    //     justify-content: flex-end;
+    // }
 }

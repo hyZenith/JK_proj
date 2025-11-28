@@ -3,140 +3,234 @@ import InfoPagesLayout from "../components/InfoPagesLayout";
 import "./PostRequirementPage.scss";
 
 const PostRequirementPage = () => {
-    const [formData, setFormData] = useState({
-        productName: "",
-        category: "",
-        quantity: "",
-        description: "",
-        targetPrice: "",
-        email: "",
-        phone: ""
+  const [formData, setFormData] = useState({
+    CompanyName: "",
+    FirstName: "",
+    LastName: "",
+    PhoneCode: "",
+    PhoneNumber: "",
+    Email: "",
+    Country: "Turkey",
+    Industry: "",
+    DefineProject: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
+  };
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Add your form submission logic here
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted:", formData);
-        // Add your form submission logic here
-    };
+  return (
+    <InfoPagesLayout activePage="post-requirement">
+      <div className="post-requirement__container">
+        <h1 className="post-requirement__title">Post a requirement</h1>
+        <p className="post-requirement__subtitle">
+          Submit Your Sourcing Needs. Let Us Find Your Perfect Partner.
+        </p>
+        <p className="post-requirement__intro">
+          Ready to make your sourcing process simpler? Post your requirement
+          with Go Trade Türkiye, and let qualified suppliers come to you.
+          Customize your post to detail specifications, budget, timeline, and
+          expectations so that only the most qualified suppliers respond. From
+          initial interest to contract finalization, we'll help facilitate a
+          productive process, so you get the right fit for your project faster
+          and more efficiently.
+        </p>
 
-    return (
-        <InfoPagesLayout activePage="post-requirement">
-            <div className="post-requirement__container">
-                <h1 className="post-requirement__title">Post Your Requirement</h1>
-                <p className="post-requirement__subtitle">
-                    Tell us what you need and let verified Turkish suppliers reach out to you
-                </p>
+        <form className="post-requirement__form" onSubmit={handleSubmit}>
+          <div className="post-requirement__form-row post-requirement__form-row--two-col">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Company Name
+            </label>
+            <input
+              type="text"
+              name="CompanyName"
+              value={formData.CompanyName}
+              onChange={handleChange}
+              required
+              placeholder="Enter your company name"
+              className="post-requirement__input"
+            />
+          </div>
 
-                <form className="post-requirement__form" onSubmit={handleSubmit}>
-                    <div className="post-requirement__form-group">
-                        <label htmlFor="productName">Product Name *</label>
-                        <input
-                            type="text"
-                            id="productName"
-                            name="productName"
-                            value={formData.productName}
-                            onChange={handleChange}
-                            required
-                            placeholder="What product are you looking for?"
-                        />
-                    </div>
+          {/* <div className="post-requirement__form-row post-requirement__form-row--split">
+            <div className="post-requirement__form-col">
+              <label className="post-requirement__label">
+                <span className="post-requirement__required">*</span> Full Name
+              </label>
+              <input
+                type="text"
+                name="FirstName"
+                value={formData.FirstName}
+                onChange={handleChange}
+                required
+                placeholder="Enter your first name"
+                className="post-requirement__input"
+              />
 
-                    <div className="post-requirement__form-group">
-                        <label htmlFor="category">Category *</label>
-                        <select
-                            id="category"
-                            name="category"
-                            value={formData.category}
-                            onChange={handleChange}
-                            required
-                        >
-                            <option value="">Select a category</option>
-                            <option value="textiles">Textiles & Apparel</option>
-                            <option value="food">Food & Beverages</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="machinery">Machinery</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div className="post-requirement__form-group">
-                        <label htmlFor="quantity">Quantity *</label>
-                        <input
-                            type="text"
-                            id="quantity"
-                            name="quantity"
-                            value={formData.quantity}
-                            onChange={handleChange}
-                            required
-                            placeholder="e.g., 1000 units"
-                        />
-                    </div>
-
-                    <div className="post-requirement__form-group">
-                        <label htmlFor="targetPrice">Target Price</label>
-                        <input
-                            type="text"
-                            id="targetPrice"
-                            name="targetPrice"
-                            value={formData.targetPrice}
-                            onChange={handleChange}
-                            placeholder="Your budget (optional)"
-                        />
-                    </div>
-
-                    <div className="post-requirement__form-group post-requirement__form-group--full">
-                        <label htmlFor="description">Detailed Description *</label>
-                        <textarea
-                            id="description"
-                            name="description"
-                            value={formData.description}
-                            onChange={handleChange}
-                            required
-                            rows="5"
-                            placeholder="Provide detailed specifications, quality requirements, delivery timeline, etc."
-                        />
-                    </div>
-
-                    <div className="post-requirement__form-group">
-                        <label htmlFor="email">Email *</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            placeholder="your@email.com"
-                        />
-                    </div>
-
-                    <div className="post-requirement__form-group">
-                        <label htmlFor="phone">Phone Number *</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            required
-                            placeholder="+90 XXX XXX XX XX"
-                        />
-                    </div>
-
-                    <button type="submit" className="post-requirement__submit">
-                        Submit Requirement
-                    </button>
-                </form>
+              <input
+                type="text"
+                name="LastName"
+                value={formData.LastName}
+                onChange={handleChange}
+                required
+                placeholder="Enter your last name"
+                className="post-requirement__input"
+              />
             </div>
-        </InfoPagesLayout>
-    );
+          </div> */}
+
+          <div className="post-requirement__form-row post-requirement__form-row--full-name">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Full Name
+            </label>
+
+            <div className="post-requirement__form-col">
+              <input
+                type="text"
+                name="FirstName"
+                value={formData.FirstName}
+                onChange={handleChange}
+                required
+                placeholder="Enter your first name"
+                className="post-requirement__input"
+              />
+
+              <input
+                type="text"
+                name="LastName"
+                value={formData.LastName}
+                onChange={handleChange}
+                required
+                placeholder="Enter your last name"
+                className="post-requirement__input"
+              />
+            </div>
+          </div>
+
+          <div className="post-requirement__form-row post-requirement__form-row--split">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Telephone
+            </label>
+
+            <div className="post-requirement__form-col">
+              <input
+                type="text"
+                name="PhoneCode"
+                value={formData.PhoneCode}
+                onChange={handleChange}
+                required
+                placeholder="Code"
+                className="post-requirement__input"
+              />
+
+              <input
+                type="tel"
+                name="PhoneNumber"
+                value={formData.PhoneNumber}
+                onChange={handleChange}
+                required
+                placeholder="Phone number"
+                className="post-requirement__input"
+              />
+            </div>
+          </div>
+
+          <div className="post-requirement__form-row">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Email
+              Address
+            </label>
+            <input
+              type="email"
+              name="Email"
+              value={formData.Email}
+              onChange={handleChange}
+              required
+              placeholder="Enter your email address"
+              className="post-requirement__input"
+            />
+          </div>
+
+          <div className="post-requirement__form-row">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Country /
+              Region
+            </label>
+            <div className="post-requirement">
+              <span className="post-requirement__flag"></span>
+              <select
+                // name="Country"
+                value={formData.Country}
+                onChange={handleChange}
+                required
+                className="post-requirement__select post-requirement__select--with-flag"
+              >
+                <option value="Turkey">Türkiye</option>
+                <option value="USA">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="post-requirement__form-row">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Industry
+              Sector
+            </label>
+            <select
+              name="Industry"
+              value={formData.Industry}
+              onChange={handleChange}
+              required={true}
+              className="post-requirement__select"
+            >
+              <option value="">Select the specified industry</option>
+              <option value="textiles">Textiles & Apparel</option>
+              <option value="food">Food & Beverages</option>
+              <option value="electronics">Electronics</option>
+              <option value="machinery">Machinery</option>
+              <option value="automotive">Automotive</option>
+              <option value="construction">Construction</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div className="post-requirement__form-row">
+            <label className="post-requirement__label">
+              <span className="post-requirement__required">*</span> Define Your
+              Project
+            </label>
+            <textarea
+              name="DefineProject"
+              value={formData.DefineProject}
+              onChange={handleChange}
+              required
+              rows="8"
+              placeholder="Clearly define your project, budget, and goals ..."
+              className="post-requirement__textarea"
+            />
+          </div>
+
+          <div className="post-requirement__form-actions">
+            <button type="submit" className="post-requirement__submit">
+              Submit Your Requirement
+            </button>
+          </div>
+        </form>
+      </div>
+    </InfoPagesLayout>
+  );
 };
 
 export default PostRequirementPage;
