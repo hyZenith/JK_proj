@@ -1,0 +1,149 @@
+@import "../styles/common.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .heading {
+    padding: 3rem;
+    h1 {
+      font-size: 32px;
+      color: $brandBlue;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      &.blue {
+        color: $brandBlue;
+      }
+    }
+  }
+  .pricing-container {
+    width: 100%;
+    max-width: $containerWidth;
+    margin-top: 1rem;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    th,
+    td {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+    }
+
+    /* Platform features label column */
+    .feature-header {
+      text-align: left;
+      background-color: #fafafa;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    thead {
+      background: #f9f9f9;
+
+      th {
+        position: relative;
+        vertical-align: bottom;
+
+        h3 {
+          margin: 10px 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .price {
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .sub-text {
+          font-size: 12px;
+          color: #777;
+          margin-bottom: 10px;
+        }
+
+        .badge {
+          position: absolute;
+          top: 0;
+          transform: translateY(-100%);
+          left: -2px;
+          background-color: #0057ff;
+          color: white;
+          display: inline-block;
+          padding: 1rem;
+          font-size: 12px;
+          border-radius: 3px;
+          width: calc(100% + 4px);
+        }
+
+        .select-btn {
+          background-color: #0057ff;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 20px;
+          margin-top: 10px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: 0.2s;
+
+          &:hover {
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+
+    /* Feature labels left column */
+    tbody {
+      td:first-child {
+        background-color: #fafafa;
+        font-weight: 500;
+        text-align: left;
+      }
+
+      tr:last-child {
+        .active-plan {
+          border-bottom: 1px solid #0057ff;
+        }
+      }
+    }
+
+    /* ✅ Highlight FULL column for middle plan */
+    th.active-plan,
+    td.active-plan {
+      background-color: #f3f8ff;
+    }
+
+    td.active-plan {
+      border-right: 2px solid #0057ff !important;
+      border-left: 2px solid #0057ff !important;
+    }
+
+    th.active-plan {
+      border-right: 2px solid #0057ff !important;
+      border-left: 2px solid #0057ff !important;
+      border-top: 2px solid #0057ff !important;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pricing-table {
+      font-size: 14px;
+
+      .select-btn {
+        padding: 8px 16px;
+      }
+    }
+  }
+}

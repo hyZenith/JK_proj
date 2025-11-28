@@ -1,0 +1,165 @@
+form {
+  &.search {
+    position: relative;
+    background-color: white;
+    border-radius: $borderRadius;
+    //overflow: hidden;
+    padding: 1.5rem;
+    max-width: $containerWidth;
+    width: 100%;
+    margin: 1rem auto;
+    z-index: 50;
+
+    .inputs {
+      background-color: whitesmoke;
+      display: flex;
+      position: inherit;
+      overflow: hidden;
+      align-items: center;
+      border-radius: $borderRadius;
+      font-size: 1.2rem;
+
+      > input {
+        // search
+        width: 100%;
+        padding: 0.75rem;
+        background-color: unset;
+        border: unset;
+        font-size: inherit;
+        outline: unset;
+      }
+
+      > button {
+        // search
+        padding: 0.75rem;
+        background-color: $primaryColor;
+        color: $onPrimary;
+        border: unset;
+        cursor: pointer;
+        border: 1px solid transparent;
+        font-size: inherit;
+        &:hover {
+          border: 1px solid $primaryColor;
+          color: $primaryColor;
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+
+      .categories {
+        position: relative;
+        font-size: inherit;
+        > button {
+          width: calc(200px - 1.5rem);
+          padding: 0.75rem;
+          //text-align: left;
+          background-color: rgba(0, 0, 0, 0.05);
+          color: $baseColor;
+          border: unset;
+          cursor: pointer;
+          font-size: inherit;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+    }
+    .categories-menu {
+      position: absolute;
+      display: none;
+      background-color: whitesmoke;
+      //box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      //padding: 0.5rem;
+      top: calc(100% + .5rem);
+      left: 0;
+      overflow: hidden;
+      border-radius: $borderRadius;
+
+      &.show {
+        display: block;
+      }
+
+      .buttons {
+        $_maxWidth: 200px;
+        // position: relative;
+        background-color: white;
+        width: 33%;
+        max-width: $_maxWidth;
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
+        padding: 0.5rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+
+        button {
+          background-color: white;
+          border: unset;
+          color: $baseColor;
+          padding: 0.5rem 0.75rem;
+          text-align: left;
+          border-radius: $borderRadius;
+          cursor: pointer;
+
+          &:hover {
+            background-color: whitesmoke;
+            color: $primaryColor;
+          }
+        }
+
+        .fixed-menu {
+          display: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          max-width: calc(100% - $_maxWidth);
+          height: 100%;
+          padding: 0.5rem;
+          button {
+            max-width: 50%;
+            background-color: whitesmoke;
+
+            &.highlighted {
+              background-color: white;
+              color: $primaryColor;
+            }
+
+            &:hover {
+              background-color: white;
+            }
+          }
+
+          &.show {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay-search-form {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 30;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}

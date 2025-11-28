@@ -1,0 +1,183 @@
+// ========== IMPORTS ==========
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "./colors.scss";
+@import "./config.scss";
+@import "./debug.scss";
+@import "./fontawesome";
+@import "./search.form.scss";
+@import "./_overlay.scss";
+@import "./_input.field.scss";
+@import "./_label.field.scss";
+@import "./_textarea.field.scss";
+@import "./_select.field.scss";
+
+// ========== GLOBAL RESET & FONT SMOOTHING ==========
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #383531;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-text-size-adjust: 100%;
+}
+
+// ========== HIGH-DPI DISPLAY SUPPORT ==========
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+// ========== TYPOGRAPHY ==========
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #383531;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+span {
+  font-size: inherit;
+  font-family: 'Inter', sans-serif;
+}
+
+em {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+}
+
+a {
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ========== BODY LAYOUT ==========
+body {
+  .wrapper {
+    max-width: $containerWidth;
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .bodyTitle {
+    position: relative;
+    padding: 1rem;
+    background-color: whitesmoke;
+    display: block;
+    .title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+// ========== UTILITY CLASSES ==========
+.blue {
+  color: $brandBlue;
+}
+
+.red {
+  color: $brandRed;
+}
+
+.call-to-action {
+  background-color: $brandBlue;
+  color: $onPrimary;
+  padding: $buttonPadding;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 2.5rem;
+  text-decoration: none;
+  width: fit-content;
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ========== CUSTOM SCROLLBAR ==========
+.blue-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 1px solid $borderColor;
+  &::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $brandBlue;
+    border-radius: 7px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $brandBlueHover;
+  }
+}
+
+// ========== FONT AWESOME ICON FIX (DO NOT REMOVE) ==========
+.fa, .fas, .far, .fal, .fab, .fa-solid, .fa-regular, .fa-light, .fa-brands {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 900 !important; // For most solid icons
+}
+.far { font-weight: 400 !important; }

@@ -1,0 +1,180 @@
+@import "../styles/common.scss";
+
+.login-page {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+
+    > .image-section {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        .background-image {
+            width: 100%;
+            image-rendering: auto;
+            object-fit: cover;
+        }
+    }
+
+    > .wrapper {
+        margin: 0;
+        padding: 1rem;
+        background-color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border-right: 1px solid $borderColor;
+    }
+    form {
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        // border-right: 1px solid $borderColor;
+        // border-radius: $borderRadius;
+        width: 33vw;
+        max-width: 470px;
+        padding: 1.5rem;
+        // margin: 10vh auto;
+        gap: 0.75rem;
+
+        .form-title {
+            text-align: center;
+            color: $baseColor;
+            padding: 0.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            // border-top: 1px solid rgba($brandBlue, 0.2);
+            // border-bottom: 1px solid rgba($brandBlue, 0.2);
+        }
+
+        .fields {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+
+            input {
+                width: 100%;
+
+                padding: 1.25rem;
+
+                color: black;
+                border: none;
+                // border-bottom: 2px solid $brandBlue;
+                outline: none;
+
+                height: 2.5rem;
+                border-radius: 2.5rem;
+                background-color: $inputFieldBackground;
+            }
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            padding: 0.75rem 1.5rem;
+
+            background-color: $brandRed;
+            color: $onPrimary;
+            border: none;
+            border-color: rgba($brandRed, 0.699);
+            border-radius: $borderRadius;
+            opacity: 0.75;
+            transition-duration: $transitionDuration;
+            cursor: pointer;
+
+            border-radius: 2.5rem;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .register {
+            a {
+                display: block;
+                width: 100%;
+                height: 2.5rem;
+                padding: 0.75rem 1.5rem;
+                text-align: center;
+                text-decoration: none;
+
+                background-color: $brandBlue;
+                color: $onBrandBlue;
+                border: 1px solid rgba($brandBlue, 0.699);
+
+                border-radius: 2.5rem;
+            }
+        }
+
+        .quick-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+
+            a {
+                display: block;
+                color: silver;
+                text-decoration: none;
+                font-size: 0.75rem;
+
+                &:hover {
+                    color: grey;
+                }
+            }
+        }
+
+        .forgotPassword {
+            padding: 0.5rem;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+
+            a {
+                display: block;
+                width: fit-content;
+                text-align: center;
+                color: $baseColor;
+                text-decoration: none;
+                font-size: 0.875rem;
+            }
+        }
+
+        // .ou {
+        //     padding: 0;
+        //     margin: 0;
+        //     text-align: center;
+        //     color: rgba(118, 95, 160, 0.699);
+        // }
+
+        .logo {
+            position: relative;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            a {
+                display: contents;
+                img {
+                    width: 100%;
+                    max-width: 75%;
+                }
+            }
+        }
+
+        hr {
+            background-color: $borderColor;
+            height: 1px;
+            width: 100%;
+            border: none;
+        }
+    }
+}

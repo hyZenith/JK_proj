@@ -1,0 +1,130 @@
+.subscription-page {
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+
+  .loading {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+  }
+
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+    .plan-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      &.active {
+        border: 2px solid #1976d2;
+      }
+
+      &.popular::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        pointer-events: none;
+      }
+
+      .badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #ff9800;
+        color: #fff;
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        border-radius: 6px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #222;
+      }
+
+      .price {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1976d2;
+        margin-bottom: 16px;
+      }
+
+      .features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.9rem;
+          color: #555;
+
+          .label {
+            font-weight: 500;
+          }
+
+          .value {
+            color: #333;
+          }
+        }
+      }
+
+      .actions {
+        text-align: center;
+
+        .select-btn,
+        .selected-btn {
+          background-color: #1976d2;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          padding: 10px 18px;
+          font-size: 0.95rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .select-btn:hover {
+          background-color: #115293;
+        }
+
+        .selected-btn {
+          background-color: #4caf50;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .plans {
+      grid-template-columns: 1fr;
+    }
+  }
+}

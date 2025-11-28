@@ -1,0 +1,37 @@
+.supplier-product-listing {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    button,
+    a {
+      padding: 0.75rem 1.25rem;
+      border: none;
+    }
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  p {
+    color: #555;
+  }
+}

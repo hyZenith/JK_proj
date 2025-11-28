@@ -1,0 +1,13 @@
+textarea {
+    padding: 0.75rem 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid silver;
+    border-radius: 0.5rem;
+    width: 100%;
+    outline: none;
+    color: $baseColor;
+    height: min-content;
+    resize: vertical;
+    max-height: 230px;
+    min-height: 80px;
+}

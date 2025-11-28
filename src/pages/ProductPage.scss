@@ -1,0 +1,131 @@
+@import "../styles/common.scss";
+// @import "./../../../../node_modules/swiper/swiper-bundle.css";
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .product {
+    width: $containerWidth;
+    display: grid;
+    grid-template-columns: 30% 1fr 300px;
+    gap: 1rem;
+    padding: 1rem;
+
+    > .images {
+      //padding: 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      //height: 60vh;
+      overflow: hidden;
+
+      img {
+        border-radius: $borderRadius;
+      }
+
+      .main {
+        position: relative;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        height: inherit;
+        overflow: hidden;
+        padding: 0.5rem;
+
+        img {
+          position: relative;
+          display: block;
+          height: -webkit-fill-available;
+          width: -webkit-fill-available;
+          z-index: 5;
+          border-radius: $borderRadius;
+        }
+      }
+
+      .image_list {
+        overflow: auto;
+        padding: 0.5rem;
+        position: relative;
+        //background-color: aqua;
+        gap: 0.5rem;
+        height: inherit;
+        border-radius: $borderRadius;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Fire */
+
+        display: flex;
+        flex-direction: row;
+
+        img {
+          cursor: pointer;
+          max-width: 100px;
+          border-radius: $borderRadius;
+          border: 3px solid whitesmoke;
+
+          &:hover {
+            border: 3px solid $primaryColor;
+          }
+
+          &[selected="true"] {
+            border: 3px solid $primaryColor;
+          }
+        }
+      }
+    }
+
+    > .about {
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  .products {
+    .section-title {
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+      h5 {
+        color: $brandBlue;
+        text-align: center;
+        width: -webkit-fill-available;
+        max-width: fit-content;
+        padding: 1rem;
+        margin: 0;
+      }
+
+      &::before,
+      &::after {
+        display: block;
+        width: -webkit-fill-available;
+        height: 1px;
+        background-color: $brandBlue;
+        content: " ";
+      }
+    }
+
+    .product-listing {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem 0;
+      max-width: $containerWidth;
+      .swiper-slide {
+        width: fit-content; /* fixed width per card */
+        flex-shrink: 0; /* prevents shrinking below width */
+      }
+    }
+  }
+}

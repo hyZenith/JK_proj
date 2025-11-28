@@ -1,0 +1,186 @@
+.inquiries-page {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .inquiries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .inquiry-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #f8faff;
+        transform: translateY(-2px);
+      }
+
+      .inquiry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 1.1rem;
+          color: #222;
+          margin: 0;
+        }
+
+        .country {
+          font-size: 0.85rem;
+          color: #777;
+        }
+      }
+
+      .buyer {
+        margin: 4px 0;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      .preview {
+        font-size: 0.9rem;
+        color: #444;
+        margin: 6px 0;
+        line-height: 1.3;
+      }
+
+      .meta {
+        font-size: 0.8rem;
+        color: #777;
+      }
+    }
+  }
+
+  /* MODAL STYLING */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modal {
+      background: #fff;
+      border-radius: 12px;
+      width: 600px;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+
+      .modal-header {
+        background-color: #1976d2;
+        color: #fff;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 1.1rem;
+          margin: 0;
+        }
+
+        .close-btn {
+          background: none;
+          border: none;
+          color: #fff;
+          font-size: 1.2rem;
+          cursor: pointer;
+        }
+      }
+
+      .modal-body {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        background-color: #f9fafb;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .message {
+          max-width: 75%;
+          padding: 10px 14px;
+          border-radius: 12px;
+          font-size: 0.95rem;
+          line-height: 1.4;
+          width: fit-content;
+
+          &.buyer {
+            background-color: #e3f2fd;
+            align-self: flex-start;
+            color: #0d47a1;
+          }
+
+          &.me {
+            background-color: #1976d2;
+            color: #fff;
+            align-self: flex-end;
+          }
+        }
+      }
+
+      .modal-footer {
+        display: flex;
+        padding: 12px;
+        border-top: 1px solid #ddd;
+        background-color: #fff;
+
+        input {
+          flex: 1;
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          margin-right: 10px;
+          font-size: 0.95rem;
+
+          &:focus {
+            outline: none;
+            border-color: #1976d2;
+          }
+        }
+
+        button {
+          background-color: #1976d2;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          padding: 10px 16px;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: #115293;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .modal-overlay .modal {
+      width: 90%;
+    }
+  }
+}

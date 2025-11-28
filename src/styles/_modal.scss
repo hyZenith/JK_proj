@@ -1,0 +1,22 @@
+
+
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translateX(-50%) translateY(-50%);
+    display: none;
+    z-index: 1500;
+    background-color: white;
+    padding: 1rem;
+    border-radius: $borderRadius;
+    &.show {
+        display: flex;
+    }
+
+    // @import "./login-required.modal.scss";
+    // @import "./country-selector.modal.scss";
+}

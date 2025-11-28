@@ -1,0 +1,19 @@
+@import "../styles/common.scss";
+
+body {
+    .wish-listing {
+        position: relative;
+        width: auto;
+        display: inline-grid;
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        padding: 1rem 0rem;
+        justify-items: center;
+        width: 100%;
+
+        // background-color: blue;
+
+        //@import "./../../../widgets/product.widget.card.scss";
+    }
+}

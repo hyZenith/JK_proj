@@ -1,0 +1,231 @@
+@import "../styles/common.scss";
+
+.register-page {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  > .image-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    .background-image {
+      width: 100%;
+      image-rendering: auto;
+      object-fit: cover;
+    }
+  }
+
+  > .wrapper {
+    margin: 0;
+    padding: 1rem;
+    background-color: white;
+    // width: 380px;
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 1px solid $borderColor;
+  }
+
+  form {
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    // border-right: 1px solid $borderColor;
+    // border-radius: $borderRadius;
+    width: 50vw;
+    max-width: 470px;
+    padding: 1.5rem;
+    // margin: 10vh auto;
+    gap: 1rem;
+
+    .row {
+      display: flex;
+      gap: inherit;
+    }
+
+    .form-title {
+      text-align: center;
+      color: $baseColor;
+      padding: 0.5rem;
+      margin: 0;
+      text-transform: uppercase;
+      // border-top: 1px solid rgba($primaryColor, 0.2);
+      // border-bottom: 1px solid rgba($primaryColor, 0.2);
+
+      //background-color: whitesmoke;
+      //border-radius: 2.5rem;
+    }
+
+    .logo {
+      position: relative;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      a {
+        display: contents;
+        img {
+          width: 100%;
+          max-width: 75%;
+        }
+      }
+    }
+
+    input {
+      &[type="text"],
+      &[type="tel"],
+      &[type="password"],
+      &[type="email"] {
+        width: 100%;
+
+        padding: 1.25rem;
+
+        color: black;
+        border: none;
+        // border-bottom: 2px solid $brandBlue;
+        outline: none;
+
+        height: 2.5rem;
+        border-radius: 2.5rem;
+        background-color: $inputFieldBackground;
+      }
+    }
+
+    select {
+      width: 100%;
+      // height: 2.5rem;
+      padding: 0 1.25rem;
+      color: black;
+      border: none;
+      // border-bottom: 2px solid $brandBlue;
+      outline: none;
+
+      height: 2.5rem;
+      border-radius: 2.5rem;
+      background-color: $inputFieldBackground;
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      height: 2.5rem;
+      padding: 0.75rem 1.5rem;
+
+      background-color: $brandRed;
+      color: $onPrimary;
+      border: none;
+      border-color: rgba($brandRed, 0.699);
+      border-radius: $borderRadius;
+      opacity: 0.75;
+      transition-duration: $transitionDuration;
+      cursor: pointer;
+
+      border-radius: 2.5rem;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    hr {
+      width: 100%;
+      height: 1px;
+      border: none;
+
+      background-color: $borderColor;
+    }
+
+    .agreements {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      gap: 0.5rem;
+    }
+
+    .login {
+      a {
+        display: block;
+        width: 100%;
+        height: 2.5rem;
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        text-decoration: none;
+
+        background-color: $brandBlue;
+        color: $onBrandBlue;
+        border: 1px solid rgba($brandBlue, 0.699);
+
+        border-radius: 2.5rem;
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    color: rgba(118, 95, 160, 0.699);
+  }
+
+  .check {
+    margin: 1rem;
+    float: left;
+  }
+
+  .registerform {
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    border-radius: 0.4rem;
+    width: 25.5rem;
+    height: auto;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 35%;
+
+    background-color: aliceblue;
+  }
+
+  .fields {
+    margin-top: 1rem;
+    color: rgba(137, 43, 226, 0.863);
+  }
+  .input-field {
+    width: 23rem;
+    height: 3rem;
+    margin: 1rem;
+    color: rgba(118, 95, 160, 0.699);
+  }
+  .check18 {
+    margin-left: 1rem;
+  }
+  .createaccompte button {
+    width: 23rem;
+    height: 4rem;
+    margin: 1rem;
+    font-size: medium;
+    background-color: rgba(118, 95, 160, 0.699);
+    color: white;
+    border-color: white;
+    border-radius: 0.4rem;
+  }
+  .connexion {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .connexion button {
+    width: 23rem;
+    height: 4rem;
+    margin: 1rem;
+    font-size: medium;
+    background-color: white;
+    color: rgba(118, 95, 160, 0.699);
+    border-color: rgba(118, 95, 160, 0.699);
+    border-radius: 0.4rem;
+  }
+}

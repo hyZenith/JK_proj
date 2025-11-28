@@ -1,0 +1,79 @@
+.how-it-works-buyers {
+
+  // ==================== CONTENT ====================
+  &__content {
+    max-width: 820px;
+  }
+
+  // ==================== TYPOGRAPHY ====================
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2d2d2d;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+  }
+
+  &__intro {
+    font-size: 15px;
+    font-weight: 400;
+    color: #6b6b6b;
+    line-height: 1.7;
+    margin: 0 0 40px 0;
+  }
+
+  // ==================== SECTIONS ====================
+  &__section {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+  }
+
+  &__section-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #6b6b6b;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+// ==================== RESPONSIVE ====================
+@media (max-width: 768px) {
+  .how-it-works-buyers {
+    &__title {
+      font-size: 28px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__intro,
+    &__section-text {
+      font-size: 14px;
+    }
+
+    &__section-title {
+      font-size: 16px;
+    }
+  }
+}

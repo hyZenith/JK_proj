@@ -1,0 +1,457 @@
+@import "../styles/common.scss";
+
+.store-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: 280px auto;
+  min-height: 100vh;
+
+  > .sidebar {
+    background-color: white;
+    top: 0px;
+    $statWidth: 150px;
+    $imageWidth: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 1rem 1rem 1rem;
+
+    align-items: center;
+    border-right: 1px solid $borderColor;
+
+    //max-height: 185px;
+    // grid-template-columns: $imageWidth auto $statWidth;
+
+    @media (min-width: 1200px) {
+      /* CSS rules for extra large devices */
+      max-width: 260px;
+    }
+
+    @media (min-width: 1920px) {
+      /* CSS rules for large screens */
+      max-width: 354px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      /* CSS rules for large devices */
+      max-width: 260px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      /* CSS rules for medium devices */
+      max-width: 260px;
+    }
+
+    @media (max-width: 480px) {
+      /* CSS rules for mobile phones */
+      max-width: 260px;
+    }
+
+    @media (max-width: 767px) and (orientation: landscape) {
+      /* CSS rules for landscape-oriented mobile phones */
+      max-width: 260px;
+    }
+
+    @media (min-width: 481px) and (max-width: 991px) {
+      /* CSS rules for tablets and small devices */
+      max-width: 260px;
+    }
+
+    .profile-picture {
+      position: relative;
+      width: $imageWidth;
+      height: $imageWidth;
+
+      overflow: hidden;
+      border-radius: 100%;
+      border: 1px solid $borderColor;
+      img {
+        width: 100%;
+      }
+    }
+
+    .about {
+      //width: 100%;
+      .name {
+        margin: 0;
+
+        font-size: 1rem;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      .description {
+        margin: 0;
+        font-size: 0.75rem;
+        text-align: center;
+
+        padding: 0.5rem;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+
+      > button {
+        padding: $buttonPadding;
+        background-color: unset;
+        border: 1px solid $brandBlue;
+        width: 100%;
+        border-radius: calc($borderRadius * 5);
+        cursor: pointer;
+        color: $brandBlue;
+        font-size: 0.85rem;
+        opacity: 0.85;
+        transition-duration: $transitionDuration;
+
+        svg, i {
+          height: 0.85rem;
+        }
+
+        &.follow {
+          background-color: $brandBlue;
+          color: $onBrandBlue;
+
+          span.follow-status {
+            display: none;
+
+            &.show {
+              display: block;
+            }
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .social {
+        display: flex;
+        gap: 0.5rem;
+
+        button {
+          padding: 0.5rem;
+          background-color: unset;
+          border: 1px solid $brandBlue;
+          width: 100%;
+          border-radius: calc($borderRadius * 5);
+          cursor: pointer;
+          color: $brandBlue;
+          font-size: 0.85rem;
+          opacity: 0.85;
+          transition-duration: $transitionDuration;
+          max-width: 2rem;
+          max-height: 2rem;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .stats {
+      //padding: 0.5rem;
+      width: $statWidth;
+      height: 185px;
+
+      padding: 0.5rem;
+      width: 100%;
+      ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        list-style: none;
+
+        li {
+          padding: 0;
+          color: black;
+
+          // background-color: blue;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          font-size: 0.75rem;
+
+          span {
+            font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .right-side {
+    .store-header {
+      background-color: whitesmoke;
+      padding: 2rem;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      padding: 2rem;
+
+      .view-tab {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        // max-width: 100%;
+        max-height: 100px;
+        overflow: auto;
+        //padding: .5rem;
+
+        .chip {
+          padding: $buttonPadding;
+          background-color: white;
+          border-radius: $borderRadius * 5;
+          width: max-content;
+          border: unset;
+          cursor: pointer;
+          transition-duration: $transitionDuration;
+
+          &:hover {
+            background-color: rgba($brandBlue, 0.25);
+          }
+
+          &[data-selected="true"] {
+            background-color: $brandBlue;
+            color: $onBrandBlue;
+          }
+        }
+      }
+
+      .page-view {
+        padding-top: 1rem;
+        display: none;
+        &[data-selected="true"] {
+          display: block;
+        }
+      }
+
+      .category-chips {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        overflow: auto;
+
+        .chip {
+          padding: $buttonPadding;
+          background-color: white;
+          border-radius: $borderRadius * 5;
+          width: max-content;
+          border: unset;
+          cursor: pointer;
+          transition-duration: $transitionDuration;
+
+          &:hover {
+            background-color: rgba(#2b2b2b, 0.25);
+          }
+
+          &[data-selected="true"] {
+            background-color: #2b2b2b;
+            color: white;
+          }
+        }
+      }
+
+      .review-listing {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .no-review {
+          //margin: 0;
+          padding: 2.5rem 0.75rem;
+          text-align: center;
+          align-self: center;
+          background-color: whitesmoke;
+          width: 100%;
+          border-radius: $borderRadius;
+        }
+
+        > .review {
+          padding: 1rem;
+          border-bottom: 1px solid $borderColor;
+          gap: 0.75rem;
+          display: flex;
+
+          > .left {
+            .avatar {
+              width: 3rem;
+              height: 3rem;
+              overflow: hidden;
+              border-radius: 3rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+          > .right {
+            // background-color: blue;
+            padding: 0;
+            margin: 0;
+            .header {
+              display: flex;
+              gap: 0.5rem;
+              padding: 0.5rem;
+
+              .date {
+                opacity: 0.75;
+              }
+
+              .username {
+                color: $primaryColor;
+              }
+              .stars {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                gap: 0.25rem;
+                color: $primaryColor;
+                height: 1rem;
+                width: 110px;
+                //width:-webkit-fill-available;
+                //align-items: center;
+                i,
+                svg {
+                  padding: 0;
+                  margin: 0;
+                }
+
+                .empty-stars {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  opacity: 0.25;
+                  // align-items: center;
+                  display: flex;
+                  flex-direction: row;
+                  gap: 0.25rem;
+                }
+              }
+            }
+            p {
+              padding: 0;
+              margin: 0;
+            }
+
+            .description {
+              //padding: 0.5rem;
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .review-it {
+          padding: 0.75rem;
+          background-color: whitesmoke;
+          border-radius: calc($borderRadius * 2);
+          display: flex;
+          gap: 0.5rem;
+          flex-direction: row;
+
+          > .left {
+            width: 85px;
+            .avatar {
+              width: 75px;
+              height: 75px;
+              overflow: hidden;
+              border-radius: 75px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+
+          > .form {
+            width: 100%;
+
+            form {
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+              width: 100%;
+
+              // @import "./../../widgets/textarea.field";
+
+              > button {
+                &.submit {
+                  background-color: $primaryColor;
+                  color: $onPrimary;
+                  padding: 0.5rem 0.75rem;
+                  border-radius: $borderRadius;
+                  border: none;
+                  width: fit-content;
+                  margin-left: auto;
+                  margin-right: 0;
+                }
+              }
+
+              .rate {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+
+                button {
+                  padding: 0.5rem;
+                  border: none;
+                  background-color: white;
+                  border-radius: $borderRadius;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  overflow: hidden;
+
+                  i,
+                  svg {
+                    margin: 0;
+                  }
+
+                  .active {
+                    display: none;
+                  }
+                  .unactive {
+                    display: block;
+                  }
+
+                  &.active {
+                    .active {
+                      display: block;
+                    }
+                    .unactive {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

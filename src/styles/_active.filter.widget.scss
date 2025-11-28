@@ -1,0 +1,150 @@
+.active-filters {
+    // display: flex;
+    // flex-direction: row;
+    // position: relative;
+    // width: 100%;
+    // align-items: center;
+    // gap: 0.5rem;
+    // flex-wrap: wrap;
+    // padding: 0.5rem 1rem;
+
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    max-width: 200px;
+    width: 100%;
+    // width: fit-content;
+
+    overflow: hidden;
+    flex-direction: column;
+    background-color: $primaryColor;
+    border-radius: calc($borderRadius * 5);
+    padding: 0.25rem;
+    height: max-content;
+    z-index: 1000;
+    display: flex;
+
+    width: fit-content;
+    transition-duration: $transitionDuration;
+
+    // &:hover {
+    //     width: 200px;
+
+    // }
+
+    .buttons {
+        // padding: 0.5rem;
+        // width: 100%;
+        .toggle-filter {
+            padding: $buttonPadding;
+            border-radius: 1.5rem;
+            width: 100%;
+            background-color: $onPrimary;
+            color: $primaryColor;
+            border: none;
+            cursor: pointer;
+            font-size: $buttonFontSize;
+            text-align: start;
+            flex-wrap: nowrap;
+            display: flex;
+
+            p {
+                margin: unset;
+                padding: unset;
+            }
+        }
+    }
+
+    .active {
+        // visibility: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+
+        // margin: 0.5rem;
+        height: 0vh;
+        max-height: calc(100vh / 3);
+        
+        // max-height: max-content;
+
+
+        overflow: scroll;
+        transition-duration: $transitionDuration;
+
+        border-radius: inherit;
+        background-color: white;
+        
+
+        // width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .chip {
+            position: relative;
+            display: flex;
+            // padding: $buttonPadding;
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+            // max-width: 150px;
+            align-items: center;
+            // padding: 0.5rem 1rem;
+            // height: 50px;
+            // font-size: 16px;
+            border-radius: 1.5rem;
+            background-color: #e0e0e0;
+
+            p {
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0;
+                padding: 0;
+            }
+
+            button {
+                $size: 20px;
+                position: relative;
+                border: none;
+                padding: 0.5rem;
+                width: min-content;
+                margin: 0;
+                cursor: pointer;
+                // background-color: blue;
+                background-color: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1.5rem;
+                color: black;
+                font-size: $buttonFontSize;
+                height: $size;
+                width: $size;
+
+                i,
+                svg {
+                    color: inherit;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .active {
+            position: relative;
+            height: 100vh;
+            margin-bottom: 0.5rem;
+            // height: unset;
+
+            // overflow: auto;
+
+            padding: 0.5rem;
+            visibility: visible;
+        }
+    }
+}
