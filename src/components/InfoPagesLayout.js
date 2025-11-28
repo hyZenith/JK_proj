@@ -13,9 +13,6 @@ const InfoPagesLayout = ({ activePage, children }) => {
               <li className={`sidebar-nav__item ${activePage === "how-it-works-buyers" ? "sidebar-nav__item--active" : ""}`}>
                 <Link to="/how-it-works">How it works</Link>
               </li>
-              <li className={`sidebar-nav__item ${activePage === "testimonials" ? "sidebar-nav__item--active" : ""}`}>
-                <Link to="/testimonials">Testimonials</Link>
-              </li>
               <li className={`sidebar-nav__item ${activePage === "post-requirement" ? "sidebar-nav__item--active" : ""}`}>
                 <Link to="/post-requirement">Post a requirement</Link>
               </li>
