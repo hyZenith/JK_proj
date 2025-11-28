@@ -24,7 +24,7 @@
 // ==================== SIDEBAR NAVIGATION ====================
 .sidebar-nav {
     &__section {
-        margin-bottom: 40px;
+        margin-bottom:  35px;
 
         &:last-child {
             margin-bottom: 0;
@@ -35,7 +35,7 @@
         font-size: 16px;
         font-weight: 700;
         color: #000000;
-        margin: 0 0 16px 0;
+        margin: 0 0 8px 0;
         text-transform: none;
     }
 
@@ -50,7 +50,7 @@
         font-weight: 500;
         color: #6b6b6b;
         padding: 0;
-        margin-bottom: 6px;
+        margin-bottom: 2px;
         line-height: 1.5;
 
         &:last-child {
