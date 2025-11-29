@@ -19,7 +19,7 @@ const HowItWorksSuppliersPage = () => {
           enjoy enhanced credibility, building trust with buyers through direct
           communication channels for faster, more reliable connections.
         </p>
-        <p className="how-it-works-buyers__intro">
+        <p className="how-it-works-suppliers__intro">
           Take advantage of our platformʼs built-in SEO to reach a broader
           audience, and gain insights with real-time analytics to adapt to
           market demands. Success stories from other suppliers highlight the
