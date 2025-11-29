@@ -3,70 +3,96 @@ import InfoPagesLayout from "../components/InfoPagesLayout";
 import "./AboutPage.scss";
 
 const AboutPage = () => {
-    return (
-        <InfoPagesLayout activePage="about">
-            <div className="about__container">
-                <h1 className="about__title">About Go Trade Türkiye</h1>
+  return (
+    <InfoPagesLayout activePage="about">
+      <div className="about__container">
+        <h1 className="about__title">About </h1>
+        <p className="about__subtitle">
+          Go Trade Türkiye, a flagship initiative of Go Trade Agency, is
+          dedicated to connecting international investors with Turkish suppliers
+          through a reliable, curated platform. We aim to simplify the trade
+          process, promote Türkiye as a business destination, and support
+          suppliers and investors with comprehensive services that make
+          international trade accessible, transparent, and efficient. Discover
+          how Go Trade Türkiye can become your partner in growth and global
+          expansion.
+        </p>
 
-                <section className="about__section">
-                    <h2>Our Mission</h2>
-                    <p>
-                        Go Trade Türkiye is dedicated to bridging the gap between international
-                        buyers and Turkish suppliers. We provide a trusted platform that
-                        facilitates meaningful business connections and drives global trade growth.
-                    </p>
-                </section>
+        <section className="about__section">
+          <h2>Our Mission</h2>
+          <p>
+            At Go Trade Türkiye, our mission is clear: to facilitate and promote
+            international trade by simplifying the process of finding Turkish
+            suppliers and establishing business-to-business connections. We are
+            committed to helping businesses, both small and large, source
+            high-quality products, explore new markets, and foster long-lasting
+            partnerships within Türkiye.
+          </p>
+        </section>
 
-                <section className="about__section">
-                    <h2>Why Choose Us?</h2>
-                    <div className="about__features">
-                        <div className="about__feature">
-                            <h3>🔍 Verified Suppliers</h3>
-                            <p>All suppliers are thoroughly vetted to ensure quality and reliability.</p>
-                        </div>
-                        <div className="about__feature">
-                            <h3>🌍 Global Reach</h3>
-                            <p>Connect with buyers and suppliers from around the world.</p>
-                        </div>
-                        <div className="about__feature">
-                            <h3>💼 Expert Support</h3>
-                            <p>Our team provides dedicated support to help you succeed.</p>
-                        </div>
-                        <div className="about__feature">
-                            <h3>📊 Market Insights</h3>
-                            <p>Access valuable data and trends to make informed decisions.</p>
-                        </div>
-                    </div>
-                </section>
+        <section className="about__section">
+          <h2>Your Business Partner</h2>
+          <p>
+            Türkiye is known for its rich history, diverse culture, and a
+            burgeoning economy. Itʼs a country that thrives on innovation,
+            quality, and a strong entrepreneurial spirit. Go Trade Türkiye
+            bridges the gap between global businesses and the vast network of
+            Turkish suppliers, enabling you to access a wide range of products,
+            services, and opportunities.
+          </p>
+        </section>
 
-                <section className="about__section">
-                    <h2>Our Story</h2>
-                    <p>
-                        Founded in 2024, Go Trade Türkiye emerged from a vision to showcase
-                        Turkey's manufacturing excellence to the world. We recognized the
-                        immense potential of Turkish suppliers and the growing demand from
-                        international buyers for quality products at competitive prices.
-                    </p>
-                    <p>
-                        Today, we serve thousands of businesses across multiple industries,
-                        facilitating millions of dollars in trade annually. Our platform
-                        continues to evolve, incorporating the latest technology to make
-                        international trade simpler, safer, and more efficient.
-                    </p>
-                </section>
+        <div className="about__divider">
+          <h1 className="about__divider-h1"> What sets us apart</h1>
+        </div>
 
-                <section className="about__section">
-                    <h2>Our Values</h2>
-                    <ul className="about__values">
-                        <li><strong>Integrity:</strong> We operate with transparency and honesty in all our dealings.</li>
-                        <li><strong>Excellence:</strong> We strive for the highest standards in everything we do.</li>
-                        <li><strong>Innovation:</strong> We continuously improve our platform to serve you better.</li>
-                        <li><strong>Partnership:</strong> Your success is our success. We're in this together.</li>
-                    </ul>
-                </section>
-            </div>
-        </InfoPagesLayout>
-    );
+        <section className="about__section">
+          <h2>Comprehensive Directory</h2>
+          <p>
+            Our online trading portal boasts an extensive directory of Turkish
+            suppliers covering various industries, from textiles and
+            manufacturing to agriculture and technology. Whether you are looking
+            for raw materials, finished products, or business services, we have
+            you covered.
+          </p>
+        </section>
+        <section className="about__section">
+          <h2>User-Friendly Platform</h2>
+          <p>
+            Weʼve designed our website with simplicity and ease of use in mind.
+            Our intuitive interface ensures that you can quickly search for
+            suppliers, browse products, and connect with potential partners
+            without any hassle.
+          </p>
+        </section>
+        <section className="about__section">
+          <h2>Verified Suppliers</h2>
+          <p>
+            We take quality seriously. To ensure a high level of trust and
+            reliability, we rigorously vet and verify our listed suppliers, so
+            you can have confidence in the businesses you choose to work with.
+          </p>
+        </section>
+        <section className="about__section">
+          <h2>Networking Opportunities </h2>
+          <p>
+            Go Trade Türkiye not only helps you find suppliers but also offers a
+            platform for networking, knowledge sharing, and collaboration.
+            Connect with like-minded businesses, attend industry events, and
+            stay updated on the latest market trends.
+          </p>
+        </section>
+        <section className="about__section">
+          <h2>Dedicated Support</h2>
+          <p>
+            Our customer support team is always ready to assist you with any
+            inquiries or concerns. We are here to make your trading experience
+            as smooth as possible.
+          </p>
+        </section>
+      </div>
+    </InfoPagesLayout>
+  );
 };
 
 export default AboutPage;
