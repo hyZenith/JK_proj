@@ -1,14 +1,22 @@
 .post-requirement {
 
+    &__title {
+        color: #383531;
+        font-weight: 700;
+        font-size: 2rem;
+        margin: 0 0 10px 0;
+    }
 
     &__subtitle{
-        font-weight: 500;
+        color: #383531;
+        font-weight: 400;
         font-size: 1.2rem;
         margin:10px 0 20px 0;
     }
 
     &__intro {
         padding-bottom: 4rem;
+        color: #686159;
     }
     &__container {
         max-width: 820px;
@@ -92,6 +100,26 @@
     }
 
     /* Country dropdown flag */
+    &__country-input-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    &__flag-icon {
+        width: 32px;
+        height: 24px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    &__input--with-flag {
+        flex: 1;
+        padding-left: 50px;
+        background-repeat: no-repeat;
+        background-position: 12px center;
+        background-size: 32px 24px;
+    }
+
     &__select-wrapper {
         display: flex;
         align-items: center;
@@ -110,7 +138,7 @@
         color: white;
         border: none;
         border-radius: 25px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         cursor: pointer;
         transition: 0.3s;
         width:575px;

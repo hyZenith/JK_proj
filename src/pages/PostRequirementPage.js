@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InfoPagesLayout from "../components/InfoPagesLayout";
 import "./PostRequirementPage.scss";
+import flagImage from "../flag.png";
 
 const PostRequirementPage = () => {
   const [formData, setFormData] = useState({
@@ -60,33 +61,6 @@ const PostRequirementPage = () => {
               className="post-requirement__input"
             />
           </div>
-
-          {/* <div className="post-requirement__form-row post-requirement__form-row--split">
-            <div className="post-requirement__form-col">
-              <label className="post-requirement__label">
-                <span className="post-requirement__required">*</span> Full Name
-              </label>
-              <input
-                type="text"
-                name="FirstName"
-                value={formData.FirstName}
-                onChange={handleChange}
-                required
-                placeholder="Enter your first name"
-                className="post-requirement__input"
-              />
-
-              <input
-                type="text"
-                name="LastName"
-                value={formData.LastName}
-                onChange={handleChange}
-                required
-                placeholder="Enter your last name"
-                className="post-requirement__input"
-              />
-            </div>
-          </div> */}
 
           <div className="post-requirement__form-row post-requirement__form-row--full-name">
             <label className="post-requirement__label">
@@ -165,21 +139,15 @@ const PostRequirementPage = () => {
               <span className="post-requirement__required">*</span> Country /
               Region
             </label>
-            <div className="post-requirement">
-              <span className="post-requirement__flag"></span>
-              <select
-                // name="Country"
+            <div className="post-requirement__country-input-wrapper">
+              <input
+                name="Country"
                 value={formData.Country}
                 onChange={handleChange}
                 required
-                className="post-requirement__select post-requirement__select--with-flag"
-              >
-                <option value="Turkey">Türkiye</option>
-                <option value="USA">United States</option>
-                <option value="UK">United Kingdom</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-              </select>
+                className="post-requirement__input post-requirement__input--with-flag"
+                style={{ backgroundImage: `url(${flagImage})` }}
+              />
             </div>
           </div>
 
