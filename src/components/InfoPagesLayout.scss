@@ -48,7 +48,7 @@
     &__item {
         font-size: 16px;
         font-weight: 500;
-        color: #6b6b6b;
+        color: #686159;
         padding: 0;
         margin-bottom: 2px;
         line-height: 1.5;
@@ -64,19 +64,19 @@
             display: block;
             padding: 0;
 
-            &:hover {
-                color: #000000;
-            }
+            // &:hover {
+            //     color: #000000;
+            // }
         }
 
         &--active {
-            color: #3b82f6;
+            color: #0057ff;
             font-weight: 400;
             position: relative;
             padding-left: 16px;
 
             a {
-                color: #3b82f6;
+                color: #0057ff;
             }
 
             &::before {
@@ -87,7 +87,7 @@
                 transform: translateY(-50%);
                 width: 4px;
                 height: 24px;
-                background-color: #3b82f6;
+                background-color: #0057ff;
                 border-radius: 0;
             }
         }
