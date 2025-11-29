@@ -3,87 +3,71 @@ import InfoPagesLayout from "../components/InfoPagesLayout";
 import "./MembershipPricingPage.scss";
 
 const MembershipPricingPage = () => {
-    const plans = [
-        {
-            name: "Basic",
-            price: "Free",
-            period: "Forever",
-            features: [
-                "Company Profile",
-                "Up to 10 Products",
-                "Basic Support",
-                "Search Visibility"
-            ],
-            cta: "Get Started",
-            popular: false
-        },
-        {
-            name: "Professional",
-            price: "$99",
-            period: "per month",
-            features: [
-                "Everything in Basic",
-                "Unlimited Products",
-                "Priority Support",
-                "Featured Listing",
-                "Analytics Dashboard",
-                "Lead Notifications"
-            ],
-            cta: "Start Free Trial",
-            popular: true
-        },
-        {
-            name: "Enterprise",
-            price: "Custom",
-            period: "Contact us",
-            features: [
-                "Everything in Professional",
-                "Dedicated Account Manager",
-                "Custom Integration",
-                "API Access",
-                "White-label Options",
-                "Premium Placement"
-            ],
-            cta: "Contact Sales",
-            popular: false
-        }
-    ];
+  return (
+    <InfoPagesLayout activePage="membership-pricing">
+      <div className="membership-pricing__container">
+        <h1 className="membership-pricing__title">Membership Pricing</h1>
+        <p className="membership-pricing__subtitle">
+          Choose from our Basic, Standard and Premium anual membership plans to
+          gain access to all platform features, including SEO visibility, direct
+          messaging, and with Premium Google Ads exposure. Select a plan that
+          aligns with your growth goals and maximize your reach.
+        </p>
 
-    return (
-        <InfoPagesLayout activePage="membership-pricing">
-            <div className="membership-pricing__container">
-                <h1 className="membership-pricing__title">Membership Pricing</h1>
-                <p className="membership-pricing__subtitle">
-                    Choose the perfect plan to grow your business
-                </p>
+        <section className="membership-pricing__section">
+          <h2 className="membership-pricing__section-title">
+            Membership Overview
+          </h2>
+          <p className="membership-pricing__section-text">
+            Choose the right membership plan for your company. Whether you start
+            with our Free plan to get introduced to the market, or opt for the
+            Standard or Premium plans for enhanced visibility and advanced
+            tools, each membership is designed to help you grow your presence in
+            the Turkish market.
+          </p>
+        </section>
+        <section className="membership-pricing__section">
+          <h2 className="membership-pricing__section-title">
+            Benefits Comparison Table
+          </h2>
+          <p className="membership-pricing__section-text">
+            Compare the features and benefits across our membership plans. The
+            Free plan offers basic exposure, while the Standard and Premium
+            plans provide additional features like SEO optimization, direct
+            messaging, and access to Google Ads. Decide which plan best suits
+            your business needs
+          </p>
+        </section>
 
-                <div className="membership-pricing__plans">
-                    {plans.map((plan, index) => (
-                        <div
-                            key={index}
-                            className={`membership-pricing__plan ${plan.popular ? "membership-pricing__plan--popular" : ""
-                                }`}
-                        >
-                            {plan.popular && (
-                                <div className="membership-pricing__badge">Most Popular</div>
-                            )}
-                            <h3 className="membership-pricing__plan-name">{plan.name}</h3>
-                            <div className="membership-pricing__price">
-                                <span className="membership-pricing__price-amount">{plan.price}</span>
-                                <span className="membership-pricing__price-period">{plan.period}</span>
-                            </div>
-                            <ul className="membership-pricing__features">
-                                {plan.features.map((feature, idx) => (
-                                    <li key={idx}>{feature}</li>
-                                ))}
-                            </ul>
-                            <button className="membership-pricing__cta">{plan.cta}</button>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </InfoPagesLayout>
-    );
+        <section className="membership-pricing__section">
+          <h2 className="membership-pricing__section-title">
+            Upgrade Encouragement{" "}
+          </h2>
+          <p className="membership-pricing__section-text">
+            Unlock even more potential with our Standard and Premium plans.
+            These options offer better exposure, advanced marketing tools, and
+            direct access to investors and buyers. Elevate your business
+            visibility and take advantage of additional promotional services.
+          </p>
+        </section>
+
+        <section className="membership-pricing__section">
+          <h2 className="membership-pricing__section-title">
+            Quick Signup CTA
+          </h2>
+          <p className="membership-pricing__section-text">
+            Get listed today! Select your membership plan and join the Go Trade
+            Türkiye network. Whether you're starting with the Free plan or ready
+            to upgrade, signing up is quick and easy. Start your journey toward
+            growing your business in the Turkish market.
+          </p>
+        </section>
+      </div>
+      <button className="membership-pricing__add-company-button">
+        Add your company
+      </button>
+    </InfoPagesLayout>
+  );
 };
 
 export default MembershipPricingPage;
