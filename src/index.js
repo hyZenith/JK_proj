@@ -52,12 +52,10 @@ const HelpSupportPage = lazyWithRouter(() => import('./pages/HelpSupportPage'));
 const ExhibitionsPage = lazyWithRouter(() => import('./pages/ExhibitionsPage'));
 const AboutPage = lazyWithRouter(() => import('./pages/AboutPage'));
 const ContactPage = lazyWithRouter(() => import('./pages/ContactPage'));
-const TestimonialsPage = lazyWithRouter(() => import('./pages/TestimonialsPage'));
 const TermsPage = lazyWithRouter(() => import('./pages/TermsPage'));
 const PrivacyPage = lazyWithRouter(() => import('./pages/PrivacyPage'));
+const SearchSuppliers = lazyWithRouter(() => import('./pages/SearchSuppliers'));
 
-// app launch
-//  https://chatgpt.com/c/67188c96-2c3c-8004-8be0-5af37b623eeb
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -84,13 +82,13 @@ root.render(
           {/* Footer Pages */}
           <Route path="/how-it-works" element={<HowItWorksBuyersPage />} />
           <Route path="/post-requirement" element={<PostRequirementPage />} />
+          <Route path="/search-suppliers" element={<SearchSuppliers />} />
           <Route path="/suppliers/how-it-works" element={<HowItWorksSuppliersPage />} />
           <Route path="/membership-pricing" element={<MembershipPricingPage />} />
           <Route path="/help-support" element={<HelpSupportPage />} />
           <Route path="/exhibitions" element={<ExhibitionsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
         </Route>
@@ -127,8 +125,3 @@ root.render(
     <ModalProvider />
   </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-
