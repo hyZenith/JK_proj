@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import InfoPagesLayout from "../components/InfoPagesLayout";
 import "./PostRequirementPage.scss";
-import flagImage from "../flag.png";
 
 const PostRequirementPage = () => {
   const [formData, setFormData] = useState({
@@ -166,7 +165,7 @@ const PostRequirementPage = () => {
                 onChange={handleChange}
                 required
                 className="post-requirement__input post-requirement__input--with-flag"
-                style={{ backgroundImage: `url(${flagImage})` }}
+                style={{ backgroundImage: "url(/assets/flag.png)" }}
               />
             </div>
           </div>
