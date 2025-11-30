@@ -23,6 +23,23 @@ const PostRequirementPage = () => {
     });
   };
 
+  const handlePhoneCodeChange = (e) => {
+    let value = e.target.value;
+
+    // Remove any non-digit characters except +
+    value = value.replace(/[^\d+]/g, "");
+
+    // Ensure it starts with +
+    if (value && !value.startsWith("+")) {
+      value = "+" + value.replace(/\+/g, "");
+    }
+
+    setFormData({
+      ...formData,
+      PhoneCode: value,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
@@ -100,10 +117,13 @@ const PostRequirementPage = () => {
                 type="text"
                 name="PhoneCode"
                 value={formData.PhoneCode}
-                onChange={handleChange}
+                onChange={handlePhoneCodeChange}
                 required
-                placeholder="Code"
+                placeholder="code"
+                pattern="\+[0-9]{1,4}"
+                maxLength="5"
                 className="post-requirement__input"
+                title="Please enter a valid country code (e.g., +90, +1, +44)"
               />
 
               <input
