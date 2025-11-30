@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import InfoPagesLayout from "../components/InfoPagesLayout";
 import "./ExhibitionsPage.scss";
 
 const ExhibitionsPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
+
   const exhibitions = [
     {
       name: "Istanbul Textile & Fashion Fair",
@@ -36,7 +39,19 @@ const ExhibitionsPage = () => {
       description:
         "Explore the latest trends in home decor, furniture, and interior design.",
     },
+    
   ];
+
+  // Pagination logic 
+  const totalPages = Math.ceil(exhibitions.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentExhibitions = exhibitions.slice(startIndex, endIndex);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <InfoPagesLayout activePage="exhibitions">
@@ -50,7 +65,7 @@ const ExhibitionsPage = () => {
         </p>
 
         <div className="exhibitions__grid">
-          {exhibitions.map((exhibition, index) => (
+          {currentExhibitions.map((exhibition, index) => (
             <div key={index} className="exhibitions__card">
               <div className="exhibitions__card-header">
                 <p className="exhibitions__date">{exhibition.date}</p>
@@ -70,6 +85,24 @@ const ExhibitionsPage = () => {
             </div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="exhibitions__pagination">
+            <div className="exhibitions__pagination-numbers">
+              {[...Array(totalPages)].map((_, index) => (
+                <button
+                  key={index}
+                  className={`exhibitions__pagination-number ${
+                    currentPage === index + 1 ? "exhibitions__pagination-number--active" : ""
+                  }`}
+                  onClick={() => handlePageChange(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </InfoPagesLayout>
   );

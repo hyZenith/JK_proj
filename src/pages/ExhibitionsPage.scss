@@ -16,14 +16,8 @@
         margin-bottom: 40px;
     }
 
-    &__grid {
-        // display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 24px;
-    }
-
     &__card {
-        background: #f8f8f8;
+        background: #F2F1F0;
         padding: 24px;
         margin-bottom: 20px;
         border-radius: 12px;
@@ -32,40 +26,97 @@
     }
 
     &__card-header {
-        margin-bottom: 12px;
+        margin-bottom: 4px;
     }
 
     &__category {
         color: #0057ff;
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-weight: 600;
     }
 
     &__name {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 12px;
+        margin-bottom: 4px;
         color: #0057ff;
     }
 
     &__details {
-        margin-bottom: 12px;
+        margin-bottom: 4px;
 
         p {
-            font-size: 0.9rem;
-            color: #6b6b6b;
-            margin: 6px 0;
+            font-size: 1rem;
+            color: #686168;
+            margin: 0 0 10px 0;
         }
     }
-
+    
     &__description {
         font-size: 0.95rem;
         line-height: 1.6;
-        color: #6b6b6b;
+        color: #686168;
         margin-bottom: 16px;
         flex-grow: 1;
     }
 
+    &__pagination {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__pagination-button {
+        padding: 8px 16px;
+        border: 1px solid #0057ff;
+        background-color: white;
+        color: #0057ff;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+            background-color: #0057ff;
+            color: white;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    &__pagination-numbers {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__pagination-number {
+        padding: 10px 16px;
+        border: 1px solid #e0e0e0;
+        background-color: white;
+        color: #383531;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: #0057ff;
+            color: #0057ff;
+        }
+
+        &--active {
+            background-color: #0057ff;
+            color: white;
+            border-color: #0057ff;
+        }
+    }
 
     @media (max-width: 768px) {
         &__title {
