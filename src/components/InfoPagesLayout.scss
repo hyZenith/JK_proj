@@ -1,6 +1,5 @@
 .info-pages-layout {
     display: flex;
-    min-height: 100vh;
     background-color: #ffffff;
 
     // ==================== SIDEBAR ====================
@@ -34,7 +33,7 @@
     &__heading {
         font-size: 16px;
         font-weight: 700;
-        color: #000000;
+        color: #383531;
         margin: 0 0 8px 0;
         text-transform: none;
     }
