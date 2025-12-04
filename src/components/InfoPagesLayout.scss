@@ -2,16 +2,13 @@
     display: flex;
     background-color: #ffffff;
 
-    // ==================== SIDEBAR ====================
     &__sidebar {
-        // width: 337px;
         min-width: 337px;
         background-color: #ffffff;
         padding: 60px 0 60px 370px;
         border-right: none;
     }
 
-    // ==================== MAIN CONTENT ====================
     &__main {
         flex: 1;
         padding: 60px 60px 60px 60px;
@@ -20,7 +17,6 @@
     }
 }
 
-// ==================== SIDEBAR NAVIGATION ====================
 .sidebar-nav {
     &__section {
         margin-bottom:  35px;
@@ -63,16 +59,12 @@
             display: block;
             padding: 0;
 
-            // &:hover {
-            //     color: #000000;
-            // }
         }
 
         &--active {
             color: #0057ff;
             font-weight: 400;
             position: relative;
-            padding-left: 16px;
 
             a {
                 color: #0057ff;
@@ -81,11 +73,11 @@
             &::before {
                 content: "";
                 position: absolute;
-                left: 0;
+                left: -10%;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 4px;
-                height: 24px;
+                height: 30px;
                 background-color: #0057ff;
                 border-radius: 0;
             }
@@ -93,7 +85,7 @@
     }
 }
 
-// ==================== RESPONSIVE ====================
+// responsive 
 @media (max-width: 1024px) {
     .info-pages-layout {
         &__sidebar {
