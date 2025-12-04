@@ -48,10 +48,6 @@
     transition: border-color 0.2s ease;
   }
 
-  &__email-input:focus {
-    border-color: #0057ff;
-  }
-
   &__email-label {
     position: absolute;
     top: 50%;
@@ -61,7 +57,7 @@
     color: #686159;
     font-size: 1rem;
     padding: 0 4px;
-    background: white;
+    background: rgb(255, 255, 255);
     transition: 0.2s ease;
   }
 
