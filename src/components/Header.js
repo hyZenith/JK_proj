@@ -89,18 +89,7 @@ const Header = ({ router, refreshService }) => {
   const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
-  // Sample dropdown data - replace with actual data from your API
-  const buyerMenuItems = [
-    { label: "Buyer Guide", url: "/buyer-guide" },
-    { label: "How to Source", url: "/how-to-source" },
-    { label: "Supplier Verification", url: "/supplier-verification" }
-  ];
-
-  const supportMenuItems = [
-    { label: "Help Center", url: "/help" },
-    { label: "Contact Support", url: "/contact" },
-    { label: "FAQ", url: "/faq" }
-  ];
+  
 
   const userMenuItems = user ? [
     { label: "My Profile", url: "/my/profile" },
@@ -262,12 +251,6 @@ const Header = ({ router, refreshService }) => {
               >
                 Buyer Central <FaAngleDown />
               </button>
-              {isBuyerDropdownOpen && (
-                <DropdownMenu
-                  items={buyerMenuItems}
-                  onClose={() => setIsBuyerDropdownOpen(false)}
-                />
-              )}
             </div>
 
             <div className="dropdown-wrapper" ref={supportDropdownRef}>
@@ -279,12 +262,6 @@ const Header = ({ router, refreshService }) => {
               >
                 Support <FaAngleDown />
               </button>
-              {isSupportDropdownOpen && (
-                <DropdownMenu
-                  items={supportMenuItems}
-                  onClose={() => setIsSupportDropdownOpen(false)}
-                />
-              )}
             </div>
           </div>
 
