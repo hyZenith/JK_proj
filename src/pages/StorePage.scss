@@ -5,6 +5,9 @@
   display: grid;
   grid-template-columns: 280px auto;
   min-height: 100vh;
+  max-width: $containerWidth;
+  margin: 0 auto;
+  box-sizing: border-box;
 
   > .sidebar {
     background-color: white;

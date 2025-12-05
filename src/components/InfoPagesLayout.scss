@@ -1,19 +1,23 @@
 .info-pages-layout {
     display: flex;
     background-color: #ffffff;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
 
     &__sidebar {
         min-width: 337px;
         background-color: #ffffff;
-        padding: 60px 0 60px 370px;
+        padding: 60px 24px 60px 60px;
         border-right: none;
+        box-sizing: border-box;
     }
 
     &__main {
         flex: 1;
         padding: 60px 60px 60px 60px;
         overflow-y: auto;
-        margin-left: 100px;
+        box-sizing: border-box;
     }
 }
 
@@ -91,7 +95,7 @@
         &__sidebar {
             width: 280px;
             min-width: 280px;
-            padding: 40px 0 40px 60px;
+            padding: 40px 24px 40px 40px;
         }
 
         &__main {

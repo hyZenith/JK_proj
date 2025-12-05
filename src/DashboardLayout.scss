@@ -2,6 +2,9 @@
   display: flex;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
 
   .sidebar {
     width: 220px;

@@ -1,17 +1,21 @@
 @import "../styles/common.scss";
-// @import "./../../../../node_modules/swiper/swiper-bundle.css";
 
 .product-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 
   > .product {
-    width: $containerWidth;
+    width: 100%;
+    max-width: $containerWidth;
+    margin: 0 auto;
+    padding: 1rem 24px;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 30% 1fr 300px;
     gap: 1rem;
-    padding: 1rem;
 
     > .images {
       //padding: 1.5rem;

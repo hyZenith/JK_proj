@@ -113,6 +113,8 @@ body {
     max-width: $containerWidth;
     width: 100%;
     margin: 1rem auto;
+    padding: 0 24px;
+    box-sizing: border-box;
   }
 
   .bodyTitle {
@@ -124,6 +126,26 @@ body {
       font-size: 1.5rem;
       text-align: center;
     }
+  }
+}
+
+.page-container {
+  max-width: $containerWidth;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.full-width-section {
+  width: 100%;
+  box-sizing: border-box;
+  
+  .section-inner {
+    max-width: $containerWidth;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
   }
 }
 

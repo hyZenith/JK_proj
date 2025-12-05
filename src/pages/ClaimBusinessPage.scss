@@ -46,6 +46,8 @@
     margin-top: -10rem;
     width: 100%;
     max-width: $containerWidth;
+    padding: 0 24px;
+    box-sizing: border-box;
 
     background-color: white;
     border: 1px solid $borderColor;
