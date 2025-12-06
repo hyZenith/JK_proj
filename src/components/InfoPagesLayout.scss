@@ -2,13 +2,13 @@
     display: flex;
     background-color: #ffffff;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0  auto;
     box-sizing: border-box;
 
     &__sidebar {
         min-width: 337px;
         background-color: #ffffff;
-        padding: 60px 24px 60px 60px;
+        padding: 60px 24px 60px 170px;
         border-right: none;
         box-sizing: border-box;
     }

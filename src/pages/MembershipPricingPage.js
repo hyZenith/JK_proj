@@ -61,11 +61,11 @@ const MembershipPricingPage = () => {
             to upgrade, signing up is quick and easy. Start your journey toward
             growing your business in the Turkish market.
           </p>
+          <button className="membership-pricing__add-company-button">
+            Add your company
+          </button>
         </section>
       </div>
-      <button className="membership-pricing__add-company-button">
-        Add your company
-      </button>
     </InfoPagesLayout>
   );
 };

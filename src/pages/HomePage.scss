@@ -1,4 +1,4 @@
-  @import "../styles/common.scss";
+@import "../styles/common.scss";
 
   // Brand Color Variables
   $headlineGray: #383531;
@@ -18,7 +18,7 @@
         padding: 14px 32px;
         background-color: $brandBlue;
         width: fit-content;
-        border-radius: 100px; // ✅ CHANGED TO PILL SHAPE
+        border-radius: 100px; 
         color: white;
         text-decoration: none;
         font-size: 15px;
@@ -26,6 +26,7 @@
         transition: all 0.3s ease;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         border: 2px solid transparent;
+        margin: 20px 0;
 
         &:hover {
           transform: translateY(-2px);
@@ -199,7 +200,8 @@
       box-sizing: border-box;
 
       h2 {
-        font-size: 42px;
+        font-size: 42px; 
+        padding: 20px 0;
         color: $headlineGray;
       }
 
@@ -489,7 +491,7 @@
 
     .boost {
       background-color: $headlineGray;
-      height: 400px;
+      // height: 500px;
       border-radius: $borderRadius;
       padding: 0;
       display: grid;
