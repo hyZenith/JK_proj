@@ -61,7 +61,10 @@ const MembershipPricingPage = () => {
             to upgrade, signing up is quick and easy. Start your journey toward
             growing your business in the Turkish market.
           </p>
-          <button className="membership-pricing__add-company-button">
+          <button 
+          className="membership-pricing__add-company-button"
+          onClick={() => window.location.href = "/become-member"}
+          >
             Add your company
           </button>
         </section>
