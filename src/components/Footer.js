@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -96,13 +96,13 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="footer__social">
           <a
-            href="https://twitter.com"
+            href="https://X.com"
             className="footer__social-link"
-            aria-label="Twitter"
+            aria-label="X (formerly Twitter)"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTwitter />
+            <FaXTwitter />
           </a>
           <a
             href="https://facebook.com"
