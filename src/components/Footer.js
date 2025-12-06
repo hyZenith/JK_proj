@@ -102,7 +102,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaXTwitter />
+            <img src="/assets/social-media-icons/icon.X.png" alt="X Logo" />
           </a>
           <a
             href="https://facebook.com"
@@ -111,7 +111,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebook />
+            <img src="/assets/social-media-icons/icon.FB.png" alt="Facebook Logo" />
           </a>
           <a
             href="https://linkedin.com"
@@ -120,7 +120,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin />
+            <img src="/assets/social-media-icons/icon.linkedIn.png" alt="LinkedIn Logo" />
           </a>
           <a
             href="https://instagram.com"
@@ -129,7 +129,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram />
+            <img src="/assets/social-media-icons/icon.Insta.png" alt="Instagram Logo" />
           </a>
           <a
             href="https://youtube.com"
@@ -138,7 +138,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaYoutube />
+            <img src="/assets/social-media-icons/icon.Youtube.png" alt="YouTube Logo" />
           </a>
         </div>
       </div>
