@@ -154,7 +154,7 @@
   border-top: 1px solid #f0f0f0; /*  ADDED - subtle separator */
   
   .header-container {
-    min-height: 40px; /* ✅ CHANGED from 38px */
+    min-height: 40px; /* CHANGED from 38px */
     padding: 0 24px;
     gap: 16px; /* ✅ ADDED */
   }
@@ -223,7 +223,7 @@
     
     .user-icon {
       color: #c7511f;
-      font-size: 16px; /* ✅ CHANGED from 14px */
+      font-size: 16px; 
     }
   }
 }
@@ -239,12 +239,12 @@
   top: 100%;
   left: 0;
   background: white;
-  border: 1px solid #e0e0e0; /* ✅ CHANGED from #ececec */
+  border: 1px solid #e0e0e0; 
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); /* ✅ CHANGED - stronger shadow */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); 
   min-width: 200px;
   z-index: 1001;
-  margin-top: 8px; /* ✅ CHANGED from 4px */
+  margin-top: 8px; 
   
   ul {
     list-style: none;
@@ -256,14 +256,14 @@
       
       a {
         display: block;
-        padding: 10px 16px; /* ✅ CHANGED from 8px 16px */
+        padding: 10px 16px; 
         color: #333;
         text-decoration: none;
-        transition: all 0.2s ease; /* ✅ CHANGED */
+        transition: all 0.2s ease; 
         font-size: 14px;
         
         &:hover {
-          background: #f5f5f5; /* ✅ CHANGED from #f7f7f7 */
+          background: #f5f5f5; 
           color: #0066ff;
         }
         
@@ -301,10 +301,10 @@
       
       a {
         display: block;
-        padding: 10px 12px; /* ✅ CHANGED from 8px 12px */
+        padding: 10px 12px; 
         color: #333;
         text-decoration: none;
-        border-radius: 6px; /* ✅ CHANGED from 4px */
+        border-radius: 6px;
         transition: all 0.2s ease;
         
         &:hover {
@@ -329,7 +329,7 @@
   
   .header-container { 
     padding: 0 20px;
-    gap: 16px; /* ✅ ADDED */
+    gap: 16px; 
     min-width: 0; 
   }
   
@@ -349,11 +349,11 @@
   
   .header-container {
     padding: 0 20px;
-    gap: 12px; /* ✅ ADDED */
+    gap: 12px; 
   }
   
   .top-header .search-wrapper .search-bar { 
-    height: 44px; /* ✅ CHANGED from 34px */
+    height: 44px; 
   }
   
   .main-menu ul {
