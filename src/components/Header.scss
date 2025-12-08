@@ -151,12 +151,12 @@
 /* Bottom Navigation Row */
 .bottom-nav {
   padding: 0;
-  border-top: 1px solid #f0f0f0; /*  ADDED - subtle separator */
+  border-top: 1px solid #f0f0f0; 
   
   .header-container {
-    min-height: 40px; /* CHANGED from 38px */
+    min-height: 40px; 
     padding: 0 24px;
-    gap: 16px; /* ✅ ADDED */
+    gap: 16px; 
   }
   
   .left-nav {
@@ -169,7 +169,7 @@
     margin: 0;
     
     button { 
-      padding: 6px 12px; /* ✅ CHANGED from 4px 10px - slightly more padding */
+      padding: 6px 12px; 
     }
   }
   
@@ -180,7 +180,7 @@
     align-items: center;
     
     .nav-link {
-      padding: 6px 12px; /* ✅ CHANGED from 4px 10px */
+      padding: 6px 12px;
     }
   }
   
@@ -191,15 +191,15 @@
     color: #333;
     display: inline-flex;
     align-items: center;
-    gap: 6px; /* ✅ CHANGED from 4px */
+    gap: 6px; 
     cursor: pointer;
     white-space: nowrap;
-    transition: all 0.2s ease; /* ✅ CHANGED */
-    border-radius: 6px; /* ✅ CHANGED from 4px */
+    transition: all 0.2s ease;
+    border-radius: 6px; 
     
     &:hover { 
       color: #0066ff;
-      background: #f5f5f5; /* ✅ CHANGED from #f7f7f7 */
+      background: #f5f5f5;
     }
     
     &:focus {
@@ -208,7 +208,7 @@
     }
     
     svg { 
-      font-size: 14px; /* ✅ CHANGED from 13px */
+      font-size: 14px; 
       transition: transform 0.2s ease;
     }
     
