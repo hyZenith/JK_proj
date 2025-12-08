@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.scss";
-import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -39,9 +38,6 @@ const Footer = () => {
               <ul className="footer__menu-list">
                 <li className="footer__menu-item">
                   <a href="/how-it-works">How it works</a>
-                </li>
-                <li className="footer__menu-item">
-                  <a href="/testimonials">Testimonials</a>
                 </li>
                 <li className="footer__menu-item">
                   <a href="/post-requirement">Post a requirement</a>
