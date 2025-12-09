@@ -1,0 +1,330 @@
+.add-company-pricing-page {
+    background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 35%);
+    min-height: 100vh;
+    padding-bottom: 100px;
+
+    // Hero Section
+    .pricing-hero {
+        text-align: center;
+        padding: 60px 20px 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        font-weight: 600;
+        color: #0066ff;
+        line-height: 1.35;
+        margin: 0 0 18px 0;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        color: #333;
+        margin: 0 0 8px 0;
+        font-weight: 400;
+
+        .highlight {
+            color: #0066ff;
+            font-weight: 600;
+        }
+    }
+
+    .hero-cta {
+        font-size: 16px;
+        color: #0066ff;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    // Pricing Container
+    .pricing-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    // Pricing Card
+    .pricing-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    // Pricing Row
+    .pricing-row {
+        display: flex;
+        border-bottom: 1px solid #ebebeb;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    // Cell Base Styles
+    .pricing-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 20px;
+        font-size: 15px;
+        color: #666;
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+
+    // Column Widths
+    .cell-feature {
+        width: 30%;
+        justify-content: flex-start;
+        text-align: left;
+        padding-left: 24px;
+        border-right: 1px solid #ebebeb;
+    }
+
+    .cell-free {
+        width: 23.33%;
+        border-right: 1px solid #ebebeb;
+    }
+
+    .cell-standard {
+        width: 23.33%;
+        position: relative;
+        border-left: 2px solid #0066ff;
+        border-right: 2px solid #0066ff;
+    }
+
+    .cell-premium {
+        width: 23.33%;
+    }
+
+    // Header Row
+    .pricing-header {
+        border-bottom: none;
+
+        .cell-feature {
+            height: 200px;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        .cell-free {
+            height: 200px;
+            padding: 0;
+            border-bottom: 1px solid #ebebeb;
+            flex-direction: column;
+        }
+
+        .cell-standard {
+            height: 200px;
+            padding: 0;
+            background: #fff;
+            flex-direction: column;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        .cell-premium {
+            height: 200px;
+            padding: 0;
+            border-bottom: 1px solid #ebebeb;
+            flex-direction: column;
+        }
+
+        // BUTTONS ALIGNED AT BOTTOM
+        .plan-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            width: 100%;
+            padding: 24px 20px;
+        }
+
+        .cell-standard .plan-info {
+            padding-top: 50px;
+        }
+
+        // FREE COLUMN: push title up, keep button at bottom
+        .cell-free .plan-title {
+            margin-bottom: 60px;
+        }
+
+        .plan-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0066ff;
+            margin-bottom: 0px;
+        }
+
+        .plan-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: -4px;
+        }
+
+        .plan-commit {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+    }
+
+    // Special Offer Badge
+    .special-badge {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0066ff;
+        color: #fff;
+        padding: 10px 90px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 0 0 8px 8px;
+        white-space: nowrap;
+        z-index: 2;
+    }
+
+    // Plan Buttons - FIXED WIDTH FOR ALIGNMENT
+    .plan-button {
+        border: none;
+        border-radius: 22px;
+        padding: 12px 0;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 180px;
+        text-align: center;
+
+        &.dark {
+            background: #333;
+            color: #fff;
+
+            &:hover {
+                background: #222;
+            }
+        }
+
+        &.blue {
+            background: #0066ff;
+            color: #fff;
+
+            &:hover {
+                background: #0052cc;
+            }
+        }
+    }
+
+    // Section Header Row
+    .section-header {
+        background: #fafafa;
+
+        .cell-feature {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .pricing-cell {
+            min-height: 50px;
+        }
+
+        .cell-standard {
+            background: #fafafa;
+        }
+    }
+
+    // Feature Rows
+    .pricing-row:not(.pricing-header):not(.section-header):not(.footer-row) {
+        .pricing-cell {
+            min-height: 54px;
+        }
+
+        .cell-feature {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .cell-free,
+        .cell-premium {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .cell-standard {
+            background: #fff;
+            font-size: 14px;
+            color: #666;
+        }
+    }
+
+    // Footer Row
+    .footer-row {
+        border-bottom: none;
+
+        .pricing-cell {
+            padding: 24px 20px;
+        }
+
+        .cell-standard {
+            border-bottom: 2px solid #0066ff;
+            background: #fff;
+        }
+    }
+
+    // Icons
+    .icon-check {
+        color: #0066ff;
+        font-size: 18px;
+    }
+
+    .icon-x {
+        color: #e53935;
+        font-size: 18px;
+    }
+
+    // Responsive
+    @media (max-width: 1000px) {
+        .pricing-hero {
+            padding: 40px 20px 30px;
+        }
+
+        .hero-title {
+            font-size: 28px;
+        }
+
+        .pricing-container {
+            overflow-x: auto;
+            padding: 0 20px;
+        }
+
+        .pricing-card {
+            min-width: 850px;
+        }
+
+        .pricing-cell {
+            padding: 12px 12px;
+            font-size: 13px;
+        }
+
+        .plan-button {
+            width: 140px;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+
+        .pricing-header {
+            .plan-title {
+                font-size: 18px;
+            }
+
+            .plan-price {
+                font-size: 15px;
+            }
+        }
+    }
+}
