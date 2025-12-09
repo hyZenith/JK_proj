@@ -226,7 +226,9 @@ export default class BecomeMemberPage extends React.Component {
                         ></textarea>
                     </div>
 
-                    <button type="submit">Become a member</button>
+                    <div className="member-button">   
+                        <button type="submit">Become a member</button>
+                    </div>
                 </form>
             </div>
         </div>
