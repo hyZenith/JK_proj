@@ -10,13 +10,15 @@
     padding-bottom: 14rem;
 
     &.purple {
-        background-color: #fbf8ff;
+      background-color: #fbf8ff;
     }
+
     &.green {
-        background-color: #f5fff6;
+      background-color: #f5fff6;
     }
+
     &.blue {
-        background-color: #f3ffff;
+      background-color: #f3ffff;
     }
 
     .blue {
@@ -41,6 +43,7 @@
       font-weight: normal;
     }
   }
+
   .form {
     margin: 0 auto;
     margin-top: -10rem;
@@ -56,15 +59,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0;
+    padding: 4rem 2rem;
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-
+      gap: 1.5rem;
       width: 100%;
-      max-width: 837px;
+      max-width: 700px;
+
+      .required {
+        color: #e53935;
+        margin-right: 4px;
+      }
 
       .error {
         color: red;
@@ -73,103 +80,136 @@
         display: block;
       }
 
-      button {
+      button[type="submit"] {
         background-color: $brandBlue;
         color: $onBrandBlue;
-        padding: 0.75rem;
-        border-radius: $buttonBorderRadius;
+        padding: 14px 24px;
+        border-radius: 25px;
         border: none;
-        width: 75%;
-        margin-left: auto;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        width: 100%;
+        margin-top: 1rem;
+
+        &:hover {
+          background-color: darken($brandBlue, 10%);
+        }
       }
 
       .form-group {
         display: grid;
-        grid-template-columns: 25% 75%;
+        grid-template-columns: 180px 1fr;
+        gap: 20px;
+        align-items: flex-start;
 
         label {
           display: block;
-          font-weight: 600;
-          margin-bottom: 0.5rem;
-        }
-      }
-
-      .industries-container {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        position: relative;
-        border-radius: 6px;
-        background-color: #fff;
-
-        button {
-          background-color: #007bff;
-          color: white;
-          border: none;
-          padding: 0.5rem 0.25rem;
-          border-radius: 4px;
-          cursor: pointer;
           font-size: 14px;
-          transition: background 0.2s ease;
-
-          &:hover {
-            background-color: #0056b3;
-          }
-        }
-      }
-
-      .chips-container {
-        display: flex;
-        gap: 0.25rem;
-        .chip {
-          background-color: #f0f0f0;
+          font-weight: 400;
           color: #333;
-          padding: 0px 10px;
-          display: flex;
-          align-items: center;
-          border-radius: 16px;
-          font-size: 13px;
-          width: min-content;
+          padding-top: 12px;
+        }
 
-          .remove-chip {
-            background: transparent;
-            border: none;
-            color: #888;
-            margin-left: 8px;
-            cursor: pointer;
-            font-size: 14px;
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 12px 16px;
+          font-size: 14px;
+          color: #333;
+          border: 1px solid #e0e0e0;
+          border-radius: 6px;
+          background: #fff;
+          box-sizing: border-box;
+          transition: border-color 0.2s ease;
 
-            &:hover {
-              color: red;
-            }
+          &::placeholder {
+            color: #999;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: #0066ff;
           }
         }
-      }
 
-      .suggestions-list {
-        position: absolute;
-        top: calc(100% + 5px);
-        left: 0;
-        width: 100%;
-        max-height: 160px;
-        overflow-y: auto;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        z-index: 20;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        textarea {
+          resize: vertical;
+          min-height: 180px;
+          line-height: 1.5;
+        }
 
-        li {
-          padding: 8px 12px;
+        // Two inputs side by side (Full Name)
+        .two-inputs {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        // Phone inputs (Code + Number)
+        .phone-inputs {
+          display: grid;
+          grid-template-columns: 80px 1fr;
+          gap: 16px;
+
+          .phone-code {
+            text-align: center;
+          }
+        }
+
+        // Input with flag as background (matching PostRequirementPage)
+        .input-with-flag {
+          padding-left: 55px;
+          background-repeat: no-repeat;
+          background-position: 12px center;
+          background-size: 32px 24px;
+        }
+
+        // Industry select dropdown
+        .industry-select {
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 12 12'%3E%3Cpath fill='%230057ff' d='M2.5 4.5L6 8l3.5-3.5l-1-1L6 6l-2.5-2.5z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 16px center;
+          padding-right: 40px;
           cursor: pointer;
-          transition: background 0.2s ease;
-          font-size: 14px;
+        }
+      }
+    }
+  }
 
-          &:hover {
-            background-color: #f2f2f2;
+  // Responsive
+  @media (max-width: 768px) {
+    .heading {
+      padding: 2rem 1rem;
+      padding-bottom: 12rem;
+
+      h1 {
+        font-size: 22px;
+      }
+    }
+
+    .form {
+      padding: 2rem 1rem;
+      margin-top: -10rem;
+
+      form {
+        .form-group {
+          grid-template-columns: 1fr;
+          gap: 8px;
+
+          label {
+            padding-top: 0;
+          }
+
+          .two-inputs {
+            grid-template-columns: 1fr;
+          }
+
+          .phone-inputs {
+            grid-template-columns: 80px 1fr;
           }
         }
       }

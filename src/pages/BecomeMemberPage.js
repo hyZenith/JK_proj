@@ -10,39 +10,16 @@ export default class BecomeMemberPage extends React.Component {
 
         this.state = {
             companyName: '',
-            registrationNo: '',
-            fullName: '',
+            vergiNumara: '',
+            firstName: '',
+            lastName: '',
+            phoneCode: '',
             phoneNumber: '',
             emailAddress: '',
-            city: '',
-            industries: [],
-            description: '',
-            vatNumber: '',
-
-            newIndustry: '',
-            filteredSuggestions: [],
-            showSuggestions: false,
-            allIndustries: [
-                "Automotive",
-                "Agriculture",
-                "Construction",
-                "Education",
-                "Energy",
-                "Finance",
-                "Healthcare",
-                "IT & Software",
-                "Manufacturing",
-                "Marketing",
-                "Retail",
-                "Telecommunications",
-                "Transportation",
-            ]
+            cityRegion: 'Istanbul',
+            industrySector: '',
+            companyDescription: '',
         };
-    }
-
-    fetchIndustries = async () => {
-        // TODO: fetch industries
-
     }
 
     handleSubmit = async (e) => {
@@ -56,14 +33,15 @@ export default class BecomeMemberPage extends React.Component {
                 method: "POST",
                 body: JSON.stringify({
                     companyName: this.state.companyName,
-                    registrationNo: this.state.registrationNo,
-                    fullName: this.state.fullName,
+                    vergiNumara: this.state.vergiNumara,
+                    firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    phoneCode: this.state.phoneCode,
                     phoneNumber: this.state.phoneNumber,
                     emailAddress: this.state.emailAddress,
-                    city: this.state.city,
-                    industries: this.state.industries,
-                    description: this.state.description,
-                    vatNumber: this.state.vatNumber,
+                    cityRegion: this.state.cityRegion,
+                    industrySector: this.state.industrySector,
+                    companyDescription: this.state.companyDescription,
                 })
             });
 
@@ -85,7 +63,6 @@ export default class BecomeMemberPage extends React.Component {
     };
 
     validateEmail = (email) => {
-        // Simple regex for email validation
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email) {
             this.setState({ emailError: "Email is required" });
@@ -96,35 +73,6 @@ export default class BecomeMemberPage extends React.Component {
         }
     };
 
-    handleIndustryChange = (e) => {
-        const value = e.target.value;
-        const filtered = this.state.allIndustries.filter(ind =>
-            ind.toLowerCase().includes(value.toLowerCase())
-        );
-        this.setState({
-            newIndustry: value,
-            filteredSuggestions: filtered,
-            showSuggestions: true
-        });
-    };
-
-    addIndustry = (industry) => {
-        const value = industry || this.state.newIndustry;
-        if (value.trim() !== "" && !this.state.industries.includes(value)) {
-            this.setState(prevState => ({
-                industries: [...prevState.industries, value],
-                newIndustry: '',
-                showSuggestions: false
-            }));
-        }
-    };
-
-    removeIndustry = (index) => {
-        this.setState(prevState => ({
-            industries: prevState.industries.filter((_, i) => i !== index)
-        }));
-    };
-
     render() {
         const color = this.selectedPlan === "premium" ? "purple" : (this.selectedPlan === "standard" ? "green" : "blue");
         const membership = this.selectedPlan === "premium" ? "Premium Annual membership" : (this.selectedPlan === "standard" ? "Standard Annual membership" : "Free Plan");
@@ -132,144 +80,152 @@ export default class BecomeMemberPage extends React.Component {
         return <div className="become-member">
 
             <div className={`heading ${color}`}>
-                <h1>You are about to join {AppConst.brandName} <br /> Community. Thank you for selecting <br /> <span className="blue">{membership}</span></h1>
+                <h1>You are about to join {AppConst.brandName} <br />Community. Thank you for selecting <br /> <span className="blue">{membership}</span></h1>
                 <p>Get ready to unlock endless opportunities and connect with <br /> businesses from around the world.<b> Welcome aboard !</b></p>
             </div>
 
             <div className="form">
                 <form onSubmit={this.handleSubmit}>
+                    {/* Company Name */}
                     <div className="form-group">
-                        <label htmlFor="companyName">Company Name:</label>
+                        <label><span className="required">*</span> Company Name</label>
                         <input
                             type="text"
-                            id="companyName"
                             name="companyName"
-                            placeholder="Your company legal name"
+                            placeholder="Must be a registered company within Türkiye"
                             value={this.state.companyName}
                             onChange={this.handleChange}
+                            required
                         />
                     </div>
 
+                    {/* Vergi Numara */}
                     <div className="form-group">
-                        <label htmlFor="registrationNo">Company registration no:</label>
+                        <label><span className="required">*</span> Vergi Numara</label>
                         <input
                             type="text"
-                            id="registrationNo"
-                            name="registrationNo"
-                            value={this.state.registrationNo}
-                            placeholder="Mersis NO"
+                            name="vergiNumara"
+                            placeholder="Enter your email address"
+                            value={this.state.vergiNumara}
                             onChange={this.handleChange}
+                            required
                         />
                     </div>
+
+                    {/* Full Name - Two fields */}
                     <div className="form-group">
-                        <label htmlFor="registrationNo">Company VAT No:</label>
-                        <input
-                            type="text"
-                            id="vatNumber"
-                            name="vatNumber"
-                            placeholder="VAT Number"
-                            value={this.state.vatNumber}
-                            onChange={this.handleChange}
-                        />
+                        <label><span className="required">*</span> Full Name</label>
+                        <div className="two-inputs">
+                            <input
+                                type="text"
+                                name="firstName"
+                                placeholder="Enter your first name"
+                                value={this.state.firstName}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <input
+                                type="text"
+                                name="lastName"
+                                placeholder="Enter your last name"
+                                value={this.state.lastName}
+                                onChange={this.handleChange}
+                                required
+                            />
+                        </div>
                     </div>
+
+                    {/* Telephone - Code + Number */}
                     <div className="form-group">
-                        <label htmlFor="fullName">Full name (owner):</label>
-                        <input
-                            type="text"
-                            id="fullName"
-                            name="fullName"
-                            placeholder="Your full name"
-                            value={this.state.fullName}
-                            onChange={this.handleChange}
-                        />
+                        <label><span className="required">*</span> Telephone</label>
+                        <div className="phone-inputs">
+                            <input
+                                type="text"
+                                name="phoneCode"
+                                placeholder="Code"
+                                value={this.state.phoneCode}
+                                onChange={this.handleChange}
+                                className="phone-code"
+                            />
+                            <input
+                                type="tel"
+                                name="phoneNumber"
+                                placeholder="Phone number"
+                                value={this.state.phoneNumber}
+                                onChange={this.handleChange}
+                                required
+                            />
+                        </div>
                     </div>
+
+                    {/* Email Address */}
                     <div className="form-group">
-                        <label htmlFor="phoneNumber">Phone number:</label>
-                        <input
-                            type="tel"
-                            id="phoneNumber"
-                            name="phoneNumber"
-                            placeholder="Your company phone number"
-                            value={this.state.phoneNumber}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="emailAddress">Email address:</label>
+                        <label><span className="required">*</span> Email Address</label>
                         <input
                             type="email"
-                            id="emailAddress"
                             name="emailAddress"
-                            placeholder="Your company email address"
+                            placeholder="Enter your email address"
                             value={this.state.emailAddress}
                             onChange={this.handleChange}
+                            required
                         />
                         {this.state.emailError && (
                             <span className="error">{this.state.emailError}</span>
                         )}
                     </div>
+
+                    {/* City / Region */}
                     <div className="form-group">
-                        <label htmlFor="city">City:</label>
+                        <label><span className="required">*</span> City / Region</label>
                         <input
                             type="text"
-                            id="city"
-                            name="city"
-                            placeholder="The city of where your company is located"
-                            value={this.state.city}
+                            name="cityRegion"
+                            value={this.state.cityRegion}
                             onChange={this.handleChange}
+                            className="input-with-flag"
+                            style={{ backgroundImage: "url(/assets/flag.png)" }}
                         />
                     </div>
+
+                    {/* Industry Sector */}
                     <div className="form-group">
-                        <label>Industries:</label>
-                        <div className="industries-container">
-                            <div className="chips-container">
-                                {this.state.industries.map((industry, index) => (
-                                    <div key={index} className="chip">
-                                        {industry}
-                                        <button
-                                            type="button"
-                                            onClick={() => this.removeIndustry(index)}
-                                            className="remove-chip"
-                                        >
-                                            ✕
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-
-
-                            <input
-                                type="text"
-                                placeholder="Search or add industry"
-                                value={this.state.newIndustry}
-                                onChange={this.handleIndustryChange}
-                                onBlur={() => this.setState({ showSuggestions: false })}
-                                onFocus={() => this.setState({ showSuggestions: true })}
-                            />
-
-                            {this.state.showSuggestions && this.state.filteredSuggestions.length > 0 && (
-                                <ul className="suggestions-list">
-                                    {this.state.filteredSuggestions.map((suggestion, index) => (
-                                        <li
-                                            key={index}
-                                            onClick={() => this.addIndustry(suggestion)}
-                                        >
-                                            {suggestion}
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="description">Company description:</label>
-                        <textarea
-                            id="description"
-                            name="description"
-                            value={this.state.description}
+                        <label><span className="required">*</span> Industry Sector</label>
+                        <select
+                            name="industrySector"
+                            value={this.state.industrySector}
                             onChange={this.handleChange}
+                            required
+                            className="industry-select"
+                        >
+                            <option value="">Select the specified industry</option>
+                            <option value="Automotive">Automotive</option>
+                            <option value="Agriculture">Agriculture</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Education">Education</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="IT & Software">IT & Software</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Telecommunications">Telecommunications</option>
+                            <option value="Transportation">Transportation</option>
+                        </select>
+                    </div>
+
+                    {/* Company Description */}
+                    <div className="form-group">
+                        <label><span className="required">*</span> Company Description</label>
+                        <textarea
+                            name="companyDescription"
+                            placeholder="Add your company description"
+                            value={this.state.companyDescription}
+                            onChange={this.handleChange}
+                            rows={8}
+                            required
                         ></textarea>
                     </div>
+
                     <button type="submit">Become a member</button>
                 </form>
             </div>
