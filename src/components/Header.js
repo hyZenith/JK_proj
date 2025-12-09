@@ -230,7 +230,7 @@ const Header = ({ router, refreshService }) => {
 
           <button
             className="add-company-btn"
-            onClick={() => router?.navigate("/become-member")}
+            onClick={() => router?.navigate("/company-pricing")}
             aria-label="Add your company"
           >
             Add your company
