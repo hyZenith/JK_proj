@@ -63,7 +63,7 @@ const MembershipPricingPage = () => {
           </p>
           <button 
           className="membership-pricing__add-company-button"
-          onClick={() => window.location.href = "/become-member"}
+          onClick={() => window.location.href = "/company-pricing"}
           >
             Add your company
           </button>
