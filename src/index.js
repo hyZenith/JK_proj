@@ -55,6 +55,7 @@ const ContactPage = lazyWithRouter(() => import('./pages/ContactPage'));
 const TermsPage = lazyWithRouter(() => import('./pages/TermsPage'));
 const PrivacyPage = lazyWithRouter(() => import('./pages/PrivacyPage'));
 const SearchSuppliers = lazyWithRouter(() => import('./pages/SearchSuppliers'));
+const AddCompanyPricingPage = lazyWithRouter(() => import('./pages/AddCompanyPricingPage'));
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -64,6 +65,7 @@ root.render(
       <Routes>
         <Route path="/" element={<ClientLayout />} >
           <Route index element={<HomePage />} />
+          <Route path='/company-pricing' element={<AddCompanyPricingPage />} />
           <Route path="/become-member" element={<BecomeMemberPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/search" element={<SearchPage />} />
