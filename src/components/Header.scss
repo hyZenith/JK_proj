@@ -60,14 +60,10 @@
       
       &:focus-within {
         background: #ffffff;
-        // border-color: #0066ff;
-        // box-shadow: 0 0 0 1px #0066ff;
       }
     }
     
     .hamburger-btn, .search-icon-btn {
-      width: 40px; 
-      height: 40px;
       font-size: 20px; 
       background: transparent;
       border: 0;
@@ -78,7 +74,7 @@
       margin: 0;
       padding: 0;
       cursor: pointer;
-      color: #5f6368; 
+      color: #383531; 
       transition: all 0.2s ease;
       flex-shrink: 0;
       
@@ -100,7 +96,7 @@
       border: 0;
       outline: 0;
       padding: 0 12px;
-      color: #202124;
+      color: #383531;
       font-weight: 400;
       
       &::placeholder { 
@@ -113,7 +109,7 @@
   .add-company-btn {
     grid-column: 3;
     justify-self: end;
-    background: #0066ff;
+    background: #0057ff;
     color: #fff;
     border: 0;
     border-radius: 100px;
