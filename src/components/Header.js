@@ -6,7 +6,6 @@ import AppConst from "../AppConst";
 import HeaderDropdown from "./HeaderDropdown";
 import CategoryRepository from "../repository/CategoryRepository";
 
-// DropdownMenu component removed - now using HeaderDropdown for all dropdowns
 
 const Header = ({ router, refreshService }) => {
   const menuRef = useRef(null);
@@ -32,7 +31,6 @@ const Header = ({ router, refreshService }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [navigationMode, setNavigationMode] = useState(initNavMode);
 
-  // Dropdown states
   const [isBuyerDropdownOpen, setIsBuyerDropdownOpen] = useState(false);
   const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
@@ -130,7 +128,6 @@ const Header = ({ router, refreshService }) => {
 
   return (
     <header className="main-header-wrapper">
-      {/* Row 1 */}
       <div className="top-header">
         <div className="header-container row-1">
           <a className="brand-logo" href="/" aria-label="GoTrade Türkiye Home">
