@@ -4,11 +4,12 @@
     color: #333;
     text-decoration: none;
     width: 100%;
-    max-width: 200px;
-    min-width: 200px;
+    max-width: 320px;
+    min-width: 290px;
+    min-height: 370px;
     background: #ffffff;
     border: 1px solid #e5e5e5;
-    padding: 24px 16px;
+    padding: 28px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -25,13 +26,13 @@
     }
 
     .avatar {
-        width: 64px;
-        height: 64px;
+        width: 96px;
+        height: 96px;
         object-fit: cover;
         border-radius: 50%;
         overflow: hidden;
         border: 1px solid #f0f0f0;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         background-color: #f8f8f8;
     }
 
@@ -44,7 +45,7 @@
         margin-bottom: 2px;
 
         h5 {
-            font-size: 16px;
+            font-size: 18px;
             margin: 0;
             font-weight: 600;
             color: #1a1a1a;
@@ -64,6 +65,19 @@
         }
     }
 
+    .stars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        margin-bottom: 8px;
+
+        .star {
+            color: #ffc107;
+            font-size: 14px;
+        }
+    }
+
     p {
         font-size: 12px;
         margin: 0;
@@ -74,18 +88,18 @@
         
         &:first-of-type {
             color: #6b7280;
-            margin-bottom: 6px;
-            font-size: 13px;
+            margin-bottom: 8px;
+            font-size: 14px;
         }
 
         &:last-of-type {
             color: #9ca3af;
-            font-size: 11px;
+            font-size: 12px;
             line-height: 1.4;
-            max-height: 32px;
+            max-height: 48px;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
         }
     }

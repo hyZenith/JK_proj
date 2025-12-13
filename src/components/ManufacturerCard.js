@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ManufacturerCard.scss";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaStar } from "react-icons/fa";
 
 class ManufacturerCard extends Component {
   render() {
@@ -23,8 +23,16 @@ class ManufacturerCard extends Component {
           <h5>{manufacturer.name}</h5>
           {manufacturer.verified ? <FaCheckCircle /> : <></>}
         </div>
+        {manufacturer.rating && (
+          <div className="stars">
+            {[...Array(manufacturer.rating)].map((_, index) => (
+              <FaStar key={index} className="star" />
+            ))}
+          </div>
+        )}
         <p>{manufacturer.industry || "Industry sector / sector title"}</p>
-        <p>{manufacturer.shortDescription}</p>
+        {manufacturer.description && <p>{manufacturer.description}</p>}
+        {manufacturer.shortDescription && <p>{manufacturer.shortDescription}</p>}
         {this.props.footer}
       </a>
     );
