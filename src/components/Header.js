@@ -3,62 +3,10 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./Header.scss";
 import { FaSearch, FaBars, FaAngleDown, FaUser } from "react-icons/fa";
 import AppConst from "../AppConst";
+import HeaderDropdown from "./HeaderDropdown";
+import CategoryRepository from "../repository/CategoryRepository";
 
-// --- START HEADERMENU COMPONENT ---
-const HeaderMenu = ({ menu, onClose }) => {
-  if (!menu || !Array.isArray(menu)) return null;
-
-  return (
-    <div className="main-menu">
-      <ul>
-        {menu.map((item, index) => (
-          <li key={index}>
-            <a href={item.url} onClick={onClose}>
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-// --- END HEADERMENU COMPONENT ---
-
-// --- START DROPDOWN MENU COMPONENT ---
-const DropdownMenu = ({ items, onClose }) => {
-  const dropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        onClose();
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [onClose]);
-
-  if (!items || !Array.isArray(items)) return null;
-
-  return (
-    <div className="dropdown-menu" ref={dropdownRef}>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            <a
-              href={item.url}
-              onClick={onClose}
-              role="menuitem"
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-// --- END DROPDOWN MENU COMPONENT ---
+// DropdownMenu component removed - now using HeaderDropdown for all dropdowns
 
 const Header = ({ router, refreshService }) => {
   const menuRef = useRef(null);
@@ -89,8 +37,6 @@ const Header = ({ router, refreshService }) => {
   const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
-  
-
   const userMenuItems = user ? [
     { label: "My Profile", url: "/my/profile" },
     { label: "My Orders", url: "/my/orders" },
@@ -103,10 +49,12 @@ const Header = ({ router, refreshService }) => {
 
   const fetchMenu = useCallback(async () => {
     try {
-      const res = await fetch(AppConst.api(AppConst.mainMenu));
-      if (res.ok) setMainMenu(await res.json());
+      const categories = await CategoryRepository.homepage();
+      console.log("Fetched categories:", categories);
+      setMainMenu(categories);
     } catch (error) {
       console.error("Failed to fetch menu:", error);
+      setMainMenu([]);
     }
   }, []);
 
@@ -123,25 +71,20 @@ const Header = ({ router, refreshService }) => {
     refreshService.subscribe("nav-mode", update);
   }, [refreshService]);
 
-  // Close all dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      // Main menu
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsMainMenuOpen(false);
       }
-
-      // Buyer dropdown
+      
       if (buyerDropdownRef.current && !buyerDropdownRef.current.contains(e.target)) {
         setIsBuyerDropdownOpen(false);
       }
 
-      // Support dropdown
       if (supportDropdownRef.current && !supportDropdownRef.current.contains(e.target)) {
         setIsSupportDropdownOpen(false);
       }
 
-      // User dropdown
       if (userDropdownRef.current && !userDropdownRef.current.contains(e.target)) {
         setIsUserDropdownOpen(false);
       }
@@ -201,7 +144,10 @@ const Header = ({ router, refreshService }) => {
                 className="hamburger-btn"
                 aria-label="Toggle menu"
                 aria-expanded={isMainMenuOpen}
-                onClick={() => setIsMainMenuOpen((v) => !v)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMainMenuOpen(!isMainMenuOpen);
+                }}
               >
                 <FaBars />
               </button>
@@ -220,10 +166,10 @@ const Header = ({ router, refreshService }) => {
                 <FaSearch />
               </button>
             </form>
-            {isMainMenuOpen && mainMenu && (
-              <HeaderMenu
+            {isMainMenuOpen && (
+              <HeaderDropdown 
                 menu={mainMenu}
-                onClose={() => setIsMainMenuOpen(false)}
+                onClose={() => setIsMainMenuOpen(false)} 
               />
             )}
           </div>
@@ -238,7 +184,6 @@ const Header = ({ router, refreshService }) => {
         </div>
       </div>
 
-      {/* Row 2 */}
       <div className="bottom-nav">
         <div className="header-container row-2">
           <div className="left-nav">
@@ -291,7 +236,7 @@ const Header = ({ router, refreshService }) => {
                 </button>
               )}
               {isUserDropdownOpen && (
-                <DropdownMenu
+                <HeaderDropdown
                   items={userMenuItems}
                   onClose={() => setIsUserDropdownOpen(false)}
                 />
