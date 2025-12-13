@@ -21,6 +21,22 @@ export default class ManufacturerRepository {
         return ManufacturerRepository.fake(12);
     }
 
+    static async searchByCategory(slug) {
+        try {
+            const url = new URL(AppConst.api(AppConst.searchManufacturers));
+            if (slug) url.searchParams.append('category', slug);
+            const response = await fetch(url);
+
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (e) {
+            console.error("Failed to fetch manufacturers by category:", e);
+        }
+
+        return ManufacturerRepository.fake(6);
+    }
+
     static async getPhoneNumber() {
         try {
             const response = await fetch(AppConst.api(AppConst.manufacturerPhoneNumber), {
@@ -179,7 +195,9 @@ export default class ManufacturerRepository {
                 name: `Manufacturer ${i}`,
                 slug: `manufacturer-${i}`,
                 verified: true,
-                avatar: `https://picsum.photos/300/300?random=${i}`
+                avatar: `https://picsum.photos/300/300?random=${i}`,
+                rating: 5,
+                description: "A summary description of the company appears here. A summary description of the company appears here. A summary ."
             });
         }
         return manufacturers;
