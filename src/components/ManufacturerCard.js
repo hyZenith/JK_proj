@@ -8,7 +8,6 @@ class ManufacturerCard extends Component {
 
     if (!manufacturer) return null;
 
-    // Construct manufacturer URL
     const manufacturerUrl = `/m/${manufacturer.slug}`;
 
     return (
