@@ -474,7 +474,7 @@ export default class HomePage extends Component {
             </p>
 
             <button className="call-to-action" onClick={() => {
-              this.props.router.navigate("/become-member");
+              this.props.router.navigate("/company-pricing");
             }}>
               Add your company
             </button>
