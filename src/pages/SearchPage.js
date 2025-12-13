@@ -17,13 +17,6 @@ import "./SearchPage.scss";
 import OnceVisibleTrigger from "../components/OnceVisibleTrigger";
 
 
-// TODO: Import your card and listing components
-// import ManufacturerCard from "./widgets/ManufacturerCard";
-// import FilterWidget from "./widgets/FilterWidget";
-// import ProductsListing from "./widgets/ProductsListing";
-// import ManufacturersListing from "./widgets/ManufacturersListing";
-// import Pagination from "./widgets/Pagination";
-
 class SearchPage extends Component {
   constructor(props) {
     super(props);
