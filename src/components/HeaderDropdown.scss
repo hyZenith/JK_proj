@@ -4,11 +4,11 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1400px;
+  background:#FBFAF9;
   max-width: 95vw;
 }
 .industry-dropdown-menu {
   padding-top: 30px;
-  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -19,45 +19,35 @@
   height: 500px;
 
   &__category-menu {
-    flex: 1;
     border-right: 1px solid #e5e7eb;
-    /* keep outer container relative for overlay */
+    border-right-style: dashed;
     position: relative;
     padding: 40px 20px 20px 20px;
 
-    /* Hide native scrollbars but keep scrolling enabled on inner element */
     .category-menu-inner {
       height: 100%;
       overflow-y: auto;
-      padding-right: 120px; /* leave space for custom thumb */
+      padding-right: 80px; 
 
-      /* hide webkit scrollbar */
       &::-webkit-scrollbar {
         width: 0;
         height: 0;
         background: transparent;
       }
 
-      /* hide firefox scrollbar */
       scrollbar-width: none;
     }
 
-    /* .custom-scrollbar is an overlay thumb positioned absolutely */
     .custom-scrollbar {
       position: absolute;
       right: 0px;
-      width: 6px;
+      width: 2px;
       background: #0057ff;
-      border-radius: 10px;
       transition: background 0.15s ease, opacity 0.15s ease;
-      pointer-events: auto; /* allow mouse events so wheel works */
+      pointer-events: auto; 
       cursor: default;
       opacity: 0.95;
 
-      &:hover {
-        background: #2563eb;
-        opacity: 1;
-      }
     }
 
     .dropdown-list {
@@ -70,17 +60,17 @@
 
         &.active a {
           background-color: #eff6ff;
-          border-color: #3b82f6;
+          border-color: #0057ff;
           color: #1e40af;
         }
 
         a {
           display: block;
-          padding: 8px 10px;
+          padding: 4px 10px;
           color: #374151;
           text-decoration: none;
-          font-size: 14px;
-          border-radius: 8px;
+          font-size: .94rem;
+          border-radius: 30px;
           transition: all 0.2s ease;
           font-weight: 500;
           border: 2px solid transparent;
@@ -104,16 +94,17 @@
   &__subcategory-menu {
     flex: 1;
     border-right: 1px solid #e5e7eb;
+    border-right-style: dashed;
     position: relative;
     padding: 40px 20px 20px 20px;
 
     .subcategory-title {
-      margin: 0 0 16px 0;
+      margin: 0 0 0 12px;
       font-size: 16px;
       font-weight: 600;
       color: #1f2937;
       padding-bottom: 12px;
-      border-bottom: 2px solid #ef4444;
+      // border-bottom: 2px solid #ef4444;
     }
     .subcategory-menu-inner {
       height: calc(100% - 48px);
@@ -129,15 +120,14 @@
         padding: 0;
 
         li {
-          margin-bottom: 2px;
-
           a {
             display: block;
-            padding: 10px 16px;
+            padding: 6px 16px;
             color: #4b5563;
             text-decoration: none;
-            font-size: 14px;
-            border-radius: 6px;
+            font-size: .94rem;
+            font-weight: 500;
+            border-radius: 30px;
             transition: all 0.15s ease;
 
             &:hover {
@@ -153,7 +143,7 @@
     .sub-custom-scrollbar {
       position: absolute;
       right: 0px;
-      width: 6px;
+      width: 2px;
       background: #cc0000;
       border-radius: 10px;
       transition: background 0.15s ease, opacity 0.15s ease;
@@ -161,7 +151,6 @@
       cursor: default;
       opacity: 0.95;
 
-      &:hover { background: #2563eb; opacity: 1; }
     }
 
     .no-subcategories {
@@ -189,14 +178,8 @@
     justify-content: center;
     padding: 20px;
 
-    .company {
-      width: 100%;
-      max-width: 320px;
-      min-width: 260px;
-    }
   }
 
-  /* Swiper navigation buttons inside the company card area */
   .manufacturer-swiper {
     position: relative;
     display: flex;
@@ -207,7 +190,7 @@
 
     .swiper-button-prev,
     .swiper-button-next {
-      background: #0057ff;
+      background: transparent;
       border: none;
       width: 40px;
       height: 40px;
@@ -216,21 +199,16 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: none;
       z-index: 10;
-      transition: transform 0.12s ease, background 0.12s ease;
+      transition: transform 0.12s ease;
     }
 
     .swiper-button-prev:hover,
     .swiper-button-next:hover {
       transform: translateY(-2px);
-      background: #2563eb;
     }
 
-    .swiper-button-prev svg path,
-    .swiper-button-next svg path {
-      stroke: white;
-    }
   }
 }
 
